@@ -6,9 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
-  <title>JNC's Zombied Strawberries v307 IOS ASSET PRELOAD</title>
-  <link rel="preconnect" href="https://static.wixstatic.com" crossorigin />
-  <link rel="dns-prefetch" href="//static.wixstatic.com" />
+  <title>JNC's Zombied Strawberries v307 iOS SAFARI PERFORMANCE</title>
   <style>
     :root {
       --yellow: #ffd84d;
@@ -1682,281 +1680,254 @@
     }
 
 
-    /* === v307 iOS/Safari asset preload gate === */
-    #assetLoadingOverlay {
-      position: absolute;
-      inset: 0;
-      z-index: 100;
-      display: grid;
-      place-items: center;
-      padding: 22px;
-      background:
-        radial-gradient(circle at 50% 30%, rgba(87, 216, 255, 0.18), transparent 38%),
-        linear-gradient(180deg, rgba(9, 6, 23, 0.98), rgba(5, 3, 13, 0.995));
-      color: #ffffff;
-      text-align: center;
-      opacity: 1;
-      visibility: visible;
-      transition: opacity 220ms ease, visibility 220ms ease;
+    /* === v307 iOS Safari performance profile === */
+    #statusBars {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      background: rgba(0,0,0,0.48) !important;
     }
 
-    #assetLoadingOverlay.hideAssetLoader {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
+    .zombieSprite,
+    .bossSprite {
+      left: 0 !important;
+      top: 0 !important;
+      filter: none !important;
+      will-change: transform !important;
+      contain: layout paint style;
     }
 
-    .assetLoaderPanel {
-      width: min(560px, 92vw);
-      padding: clamp(20px, 4vw, 34px);
-      border: 4px solid rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(27, 13, 64, 0.98), rgba(10, 7, 28, 0.98));
-      box-shadow: 0 14px 0 rgba(0, 0, 0, 0.5), 0 0 44px rgba(87, 216, 255, 0.18);
+    .obstacleOccluder {
+      left: 0 !important;
+      top: 0 !important;
+      filter: none !important;
+      will-change: transform !important;
+      contain: layout paint style;
     }
 
-    .assetLoaderTitle {
-      color: #ffd84d;
-      font-size: clamp(22px, 4vw, 38px);
-      font-weight: 1000;
-      line-height: 1;
-      text-transform: uppercase;
-      text-shadow: 3px 3px 0 #000, -1px -1px 0 #ff4f9a;
+    #enemyLayer,
+    #obstacleOcclusionLayer {
+      inset: auto !important;
+      left: 0 !important;
+      top: 0 !important;
+      width: 960px !important;
+      height: 540px !important;
+      transform-origin: 0 0 !important;
+      contain: layout paint style;
     }
 
-    #assetLoaderStatus {
-      margin-top: 15px;
-      font-size: clamp(13px, 2vw, 18px);
-      font-weight: 900;
-      color: #f2ecff;
-      text-shadow: 2px 2px 0 #000;
+    #level1ShelvesTrack,
+    #level2MidgroundTrack,
+    #level3MidgroundTrack,
+    #level4BeachTrack,
+    #level4BoardwalkTrack,
+    #level5MidgroundTrack,
+    #level6MidgroundTrack,
+    #level7MidgroundTrack,
+    #level8CrowdTrack,
+    #level8MiddleTrack,
+    #level9MidgroundTrack,
+    #level10MidgroundTrack {
+      will-change: auto !important;
     }
 
-    .assetLoaderTrack {
-      width: 100%;
-      height: 20px;
-      margin-top: 14px;
-      overflow: hidden;
-      border: 3px solid rgba(255, 255, 255, 0.88);
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.55);
-      box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.35);
+    /* Level 10 keeps its animated look but uses fewer full-screen composited frames. */
+    .level10BgFrame,
+    .level10BossFrame {
+      display: none !important;
+      animation: none !important;
+      opacity: 0 !important;
     }
 
-    #assetLoaderFill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #57d8ff, #6dff75, #ffd84d);
-      transition: width 120ms linear;
+    .level10BgFrame.bg1,
+    .level10BgFrame.bg3,
+    .level10BgFrame.bg5 {
+      display: block !important;
     }
 
-    #assetLoaderCount {
-      margin-top: 8px;
-      min-height: 1.4em;
-      color: #cfd8ff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: clamp(11px, 1.65vw, 14px);
-      font-weight: 800;
+    .level10BgFrame.bg1 { animation: iosLevel10Bg1 2.4s steps(1, end) infinite !important; }
+    .level10BgFrame.bg3 { animation: iosLevel10Bg2 2.4s steps(1, end) infinite !important; }
+    .level10BgFrame.bg5 { animation: iosLevel10Bg3 2.4s steps(1, end) infinite !important; }
+
+    .level10BossFrame.frame1,
+    .level10BossFrame.frame3,
+    .level10BossFrame.frame5,
+    .level10BossFrame.frame7 {
+      display: block !important;
     }
 
-    .assetLoaderButtons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 18px;
+    .level10BossFrame.frame1 { animation: iosLevel10Boss1 1.6s steps(1, end) infinite !important; }
+    .level10BossFrame.frame3 { animation: iosLevel10Boss2 1.6s steps(1, end) infinite !important; }
+    .level10BossFrame.frame5 { animation: iosLevel10Boss3 1.6s steps(1, end) infinite !important; }
+    .level10BossFrame.frame7 { animation: iosLevel10Boss4 1.6s steps(1, end) infinite !important; }
+
+    @keyframes iosLevel10Bg1 {
+      0%, 33.332% { opacity: 1; }
+      33.333%, 100% { opacity: 0; }
+    }
+    @keyframes iosLevel10Bg2 {
+      0%, 33.332% { opacity: 0; }
+      33.333%, 66.665% { opacity: 1; }
+      66.666%, 100% { opacity: 0; }
+    }
+    @keyframes iosLevel10Bg3 {
+      0%, 66.665% { opacity: 0; }
+      66.666%, 100% { opacity: 1; }
     }
 
-    #assetLoaderReadyBtn,
-    #assetLoaderSkipBtn {
-      display: none;
-      border: 3px solid rgba(255, 255, 255, 0.95);
-      border-radius: 999px;
-      padding: 11px 20px;
-      color: #ffffff;
-      font-weight: 1000;
-      font-size: clamp(14px, 2vw, 19px);
-      text-transform: uppercase;
-      text-shadow: 2px 2px 0 #000;
-      cursor: pointer;
+    @keyframes iosLevel10Boss1 {
+      0%, 24.999% { opacity: 1; }
+      25%, 100% { opacity: 0; }
     }
-
-    #assetLoaderReadyBtn {
-      background: linear-gradient(180deg, #ffd84d, #ff8a00);
-      box-shadow: 0 6px 0 #8a4300;
+    @keyframes iosLevel10Boss2 {
+      0%, 24.999% { opacity: 0; }
+      25%, 49.999% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
-
-    #assetLoaderSkipBtn {
-      background: linear-gradient(180deg, #57d8ff, #2f79ff);
-      box-shadow: 0 6px 0 #12307a;
+    @keyframes iosLevel10Boss3 {
+      0%, 49.999% { opacity: 0; }
+      50%, 74.999% { opacity: 1; }
+      75%, 100% { opacity: 0; }
     }
-
-    #assetLoaderReadyBtn:active,
-    #assetLoaderSkipBtn:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6);
-    }
-
-    .assetLoaderNote {
-      margin-top: 13px;
-      color: #bfc3d9;
-      font-size: clamp(10px, 1.5vw, 13px);
-      line-height: 1.35;
+    @keyframes iosLevel10Boss4 {
+      0%, 74.999% { opacity: 0; }
+      75%, 100% { opacity: 1; }
     }
 
 </style>
 </head>
 <body>
   <div id="gameShell">
-
-    <div id="assetLoadingOverlay" role="dialog" aria-modal="true" aria-label="Loading game assets">
-      <div class="assetLoaderPanel">
-        <div class="assetLoaderTitle">Zombied Strawberries</div>
-        <div id="assetLoaderStatus">Preparing the berry outbreak...</div>
-        <div class="assetLoaderTrack" aria-hidden="true">
-          <div id="assetLoaderFill"></div>
-        </div>
-        <div id="assetLoaderCount" aria-live="polite">Building asset list...</div>
-        <div class="assetLoaderButtons">
-          <button id="assetLoaderReadyBtn" type="button">Enter the Arcade</button>
-          <button id="assetLoaderSkipBtn" type="button">Play Without Waiting</button>
-        </div>
-        <div class="assetLoaderNote">
-          The first visit may take longer. Files are warmed into the browser cache before play to reduce Safari loading pauses.
-        </div>
-      </div>
-    </div>
     <div id="gameWrap">
       <div id="stage">
         <div id="level1ArtLayer" aria-hidden="true">
-          <img id="level1MarketBg" src="https://static.wixstatic.com/media/7b5caa_05ecac25050b43a6a45f6312e71fcfe3~mv2.jpg" alt="" />
+          <img id="level1MarketBg" data-src="https://static.wixstatic.com/media/7b5caa_05ecac25050b43a6a45f6312e71fcfe3~mv2.jpg" loading="lazy" decoding="async" alt="" />
           <div id="level1ShelvesTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_26b9371ca3f24c6a9ca10a88771e5bb1~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level1FloorShade"></div>
         </div>
         <div id="level2ArtLayer" aria-hidden="true">
-          <img id="level2Bg" src="https://static.wixstatic.com/media/7b5caa_0febc1274b084e6f9fb1b60012d0acf2~mv2.png" alt="" />
+          <img id="level2Bg" data-src="https://static.wixstatic.com/media/7b5caa_0febc1274b084e6f9fb1b60012d0acf2~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level2MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_7c91ace8d8a9413a90dafae0fd354eb8~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level2FloorShade"></div>
         </div>
 
         <div id="level3ArtLayer" aria-hidden="true">
           <div id="level3MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_075425e16a304e88ad4eec0cb731e8e0~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level4ArtLayer" aria-hidden="true">
-          <img id="level4Bg" src="https://static.wixstatic.com/media/7b5caa_7614514f7eae4a908532fa67242e9b47~mv2.png" alt="" />
+          <img id="level4Bg" data-src="https://static.wixstatic.com/media/7b5caa_7614514f7eae4a908532fa67242e9b47~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level4BeachTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_8ca279c8be974b58b77b4fa9d0960f42~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level4BoardwalkTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_235dd7314ab846519ab37f57043b96a3~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level5ArtLayer" aria-hidden="true">
-          <img id="level5Bg" src="https://static.wixstatic.com/media/7b5caa_7679c602bf9e4c1e8203cfa020ab2b45~mv2.jpg" alt="" />
+          <img id="level5Bg" data-src="https://static.wixstatic.com/media/7b5caa_7679c602bf9e4c1e8203cfa020ab2b45~mv2.jpg" loading="lazy" decoding="async" alt="" />
           <div id="level5MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_da861a75b13047d6990c8064e8d24b79~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level6ArtLayer" aria-hidden="true">
-          <img id="level6Bg" src="https://static.wixstatic.com/media/7b5caa_ff4d837c7ddb4148bf78b0957df1824d~mv2.png" alt="" />
+          <img id="level6Bg" data-src="https://static.wixstatic.com/media/7b5caa_ff4d837c7ddb4148bf78b0957df1824d~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level6MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_77808f8c93fc40c5816c905485069905~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level7ArtLayer" aria-hidden="true">
-          <img id="level7Bg" src="https://static.wixstatic.com/media/7b5caa_7f5f5e814da443138840e9c58f593381~mv2.png" alt="" />
-          <img id="level7ExitSign" src="https://static.wixstatic.com/media/7b5caa_469e8aadf4524fb9a541f68d9b130192~mv2.png" alt="" />
+          <img id="level7Bg" data-src="https://static.wixstatic.com/media/7b5caa_7f5f5e814da443138840e9c58f593381~mv2.png" loading="lazy" decoding="async" alt="" />
+          <img id="level7ExitSign" data-src="https://static.wixstatic.com/media/7b5caa_469e8aadf4524fb9a541f68d9b130192~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level7MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level8ArtLayer" aria-hidden="true">
-          <img id="level8Bg" src="https://static.wixstatic.com/media/7b5caa_7f5f5e814da443138840e9c58f593381~mv2.png" alt="" />
+          <img id="level8Bg" data-src="https://static.wixstatic.com/media/7b5caa_7f5f5e814da443138840e9c58f593381~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level8StageWrap">
-            <img class="level8StageFrame frame1" src="https://static.wixstatic.com/media/7b5caa_f0ab226a3e6a48acb232eeb6b2f89b01~mv2.png" alt="" />
-            <img class="level8StageFrame frame2" src="https://static.wixstatic.com/media/7b5caa_8d8862e42b3747079fc55e03d735dc48~mv2.png" alt="" />
+            <img class="level8StageFrame frame1" data-src="https://static.wixstatic.com/media/7b5caa_f0ab226a3e6a48acb232eeb6b2f89b01~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level8StageFrame frame2" data-src="https://static.wixstatic.com/media/7b5caa_8d8862e42b3747079fc55e03d735dc48~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level8CrowdTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_a8a68048e329440381ca68e3f62cacc7~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level8MiddleTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_daa18d67702349f285255639c4b5a5dc~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level9ArtLayer" aria-hidden="true">
-          <img id="level9Bg" src="https://static.wixstatic.com/media/7b5caa_8bcae855fed34054b47f11a61f459d78~mv2.png" alt="" />
+          <img id="level9Bg" data-src="https://static.wixstatic.com/media/7b5caa_8bcae855fed34054b47f11a61f459d78~mv2.png" loading="lazy" decoding="async" alt="" />
           <div id="level9MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_10a0355bee784ff29f94ad2865aa8d23~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level10ArtLayer" aria-hidden="true">
           <div id="level10BgWrap">
-            <img class="level10BgFrame bg1" src="https://static.wixstatic.com/media/7b5caa_2328ff9570a44cf1afdc17cf08e08da1~mv2.png" alt="" />
-            <img class="level10BgFrame bg2" src="https://static.wixstatic.com/media/7b5caa_241770336f514b399c0cd9b192b45205~mv2.png" alt="" />
-            <img class="level10BgFrame bg3" src="https://static.wixstatic.com/media/7b5caa_08357868c0d54a7bb40d0bf28831f8e0~mv2.png" alt="" />
-            <img class="level10BgFrame bg4" src="https://static.wixstatic.com/media/7b5caa_3d58503790444617859a463af412c5d5~mv2.png" alt="" />
-            <img class="level10BgFrame bg5" src="https://static.wixstatic.com/media/7b5caa_2b48afad39a94e4e9f4a91b6ddc2b0e5~mv2.png" alt="" />
-            <img class="level10BgFrame bg6" src="https://static.wixstatic.com/media/7b5caa_26ae0318417f4c8bb37d432a42f24ff2~mv2.png" alt="" />
+            <img class="level10BgFrame bg1" data-src="https://static.wixstatic.com/media/7b5caa_2328ff9570a44cf1afdc17cf08e08da1~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BgFrame bg2" data-src="https://static.wixstatic.com/media/7b5caa_241770336f514b399c0cd9b192b45205~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BgFrame bg3" data-src="https://static.wixstatic.com/media/7b5caa_08357868c0d54a7bb40d0bf28831f8e0~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BgFrame bg4" data-src="https://static.wixstatic.com/media/7b5caa_3d58503790444617859a463af412c5d5~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BgFrame bg5" data-src="https://static.wixstatic.com/media/7b5caa_2b48afad39a94e4e9f4a91b6ddc2b0e5~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BgFrame bg6" data-src="https://static.wixstatic.com/media/7b5caa_26ae0318417f4c8bb37d432a42f24ff2~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
           <div id="level10MidgroundTrack">
-            <img src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" alt="" />
-            <img src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img data-src="https://static.wixstatic.com/media/7b5caa_19445dfffb8d4a5893d01b270a53b9e3~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level10BossArtLayer" aria-hidden="true">
           <div id="level10BossBgWrap">
-            <img class="level10BossFrame frame1" src="https://static.wixstatic.com/media/7b5caa_7f7d83fdb65f4c5cab2813a092b3d888~mv2.png" alt="" />
-            <img class="level10BossFrame frame2" src="https://static.wixstatic.com/media/7b5caa_af5f978aac0d47b6b259529a03846e21~mv2.png" alt="" />
-            <img class="level10BossFrame frame3" src="https://static.wixstatic.com/media/7b5caa_7b39500fc2004f1c91048559a326d31e~mv2.png" alt="" />
-            <img class="level10BossFrame frame4" src="https://static.wixstatic.com/media/7b5caa_82d4cf08fed641d79baaf04c62998d4e~mv2.png" alt="" />
-            <img class="level10BossFrame frame5" src="https://static.wixstatic.com/media/7b5caa_c8d1bf0eff2f42c1b0793291be2c632e~mv2.png" alt="" />
-            <img class="level10BossFrame frame6" src="https://static.wixstatic.com/media/7b5caa_0be4780781264dc798dc302b018623bc~mv2.png" alt="" />
-            <img class="level10BossFrame frame7" src="https://static.wixstatic.com/media/7b5caa_69c45f2dd0f54eb9bb4adcd3aa08ebd3~mv2.png" alt="" />
+            <img class="level10BossFrame frame1" data-src="https://static.wixstatic.com/media/7b5caa_7f7d83fdb65f4c5cab2813a092b3d888~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame2" data-src="https://static.wixstatic.com/media/7b5caa_af5f978aac0d47b6b259529a03846e21~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame3" data-src="https://static.wixstatic.com/media/7b5caa_7b39500fc2004f1c91048559a326d31e~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame4" data-src="https://static.wixstatic.com/media/7b5caa_82d4cf08fed641d79baaf04c62998d4e~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame5" data-src="https://static.wixstatic.com/media/7b5caa_c8d1bf0eff2f42c1b0793291be2c632e~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame6" data-src="https://static.wixstatic.com/media/7b5caa_0be4780781264dc798dc302b018623bc~mv2.png" loading="lazy" decoding="async" alt="" />
+            <img class="level10BossFrame frame7" data-src="https://static.wixstatic.com/media/7b5caa_69c45f2dd0f54eb9bb4adcd3aa08ebd3~mv2.png" loading="lazy" decoding="async" alt="" />
           </div>
         </div>
         <div id="level5BossArtLayer" aria-hidden="true">
-          <img id="level5BossStudio" src="https://static.wixstatic.com/media/7b5caa_a2a60f38b5864da2b68aba265cfb927f~mv2.png" alt="" />
+          <img id="level5BossStudio" data-src="https://static.wixstatic.com/media/7b5caa_a2a60f38b5864da2b68aba265cfb927f~mv2.png" loading="lazy" decoding="async" alt="" />
         </div>
         <canvas id="game" width="960" height="540" aria-label="JNC's Zombied Strawberries game"></canvas>
         <div id="enemyLayer"></div>
@@ -2217,7 +2188,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
   <script>
     (() => {
       const canvas = document.getElementById('game');
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
+      const stageElement = document.getElementById('stage');
       const enemyLayer = document.getElementById('enemyLayer');
       const obstacleOcclusionLayer = document.getElementById('obstacleOcclusionLayer');
       const level1ArtLayer = document.getElementById('level1ArtLayer');
@@ -2514,6 +2486,195 @@ feat. Midnight Moon Strawberry Moonshine</div>
       const sprinklerDamageFactor = 0.5;
 
       const images = {};
+      const imageLoadPromises = Object.create(null);
+
+      const CHARACTER_ASSET_KEYS = {
+        brad: ['brad', 'bradStep', 'bradJump', 'bradClimb1', 'bradClimb2', 'bradMoto1', 'bradMoto2'],
+        captCocktail: ['captCocktail', 'captCocktailStep', 'captCocktailJump', 'captCocktailClimb1', 'captCocktailClimb2', 'captCocktailMoto1', 'captCocktailMoto2'],
+        steveBruce: ['steveBruce', 'steveBruceStep', 'steveBruceJump', 'steveBruceClimb1', 'steveBruceClimb2', 'steveBruceMoto1', 'steveBruceMoto2'],
+        elly: ['elly', 'ellyStep', 'ellyJump', 'ellyClimb1', 'ellyClimb2', 'ellyMoto1', 'ellyMoto2'],
+        jordy: ['jordy', 'jordyStep', 'jordyJump', 'jordyClimb1', 'jordyClimb2', 'jordyMoto1', 'jordyMoto2'],
+        kevin: ['kevin', 'kevinStep', 'kevinJump', 'kevinClimb1', 'kevinClimb2']
+      };
+
+      const COMMON_CANVAS_ASSET_KEYS = [
+        'zombie', 'restoredBerry', 'healthPickup', 'fallingZombie'
+      ];
+
+      const LEVEL_CANVAS_ASSET_KEYS = {
+        1: [
+          'strawberryCrateObstacle', 'shoppingCartObstacle', 'produceCartObstacle',
+          'checkoutStandObstacle'
+        ],
+        2: [
+          'garbageCanObstacle', 'sprinklerSprite', 'level2BossStatic', 'level2BossWalk',
+          'level2BossPreAttack', 'level2BossPostAttack', 'level2BossCocktail'
+        ],
+        3: [
+          'level3BossStatic', 'level3BossWalk', 'level3BossPreAttack',
+          'level3BossPostAttack', 'level3BossBall',
+          'kevin', 'kevinStep', 'kevinJump', 'kevinClimb1', 'kevinClimb2'
+        ],
+        4: [
+          'level4CrateObstacle', 'level4FortuneTellerObstacle',
+          'level4BossStatic', 'level4BossWalk', 'level4BossPreAttack', 'level4BossPostAttack',
+          'tikiBarBoss', 'actualBarBoss', 'savannaShake1', 'savannaShake2',
+          'savannaPour', 'savannaThrow'
+        ],
+        5: [
+          'level5ObstacleSmall', 'level5ObstacleTall', 'closedManhole', 'openManholeMike',
+          'mikeGuide', 'mikeGuideWalk', 'mikeGuideJump', 'level5BossStudio',
+          'paulRumfluencerLeft', 'paulRumfluencerWalkLeft', 'paulRumfluencerRight',
+          'paulRumfluencerWalkRight', 'paulRumfluencerJump', 'strawberryRumBottle'
+        ],
+        6: [
+          'level6ObstacleSprite', 'paulRumfluencerLeft', 'paulRumfluencerWalkLeft',
+          'paulRumfluencerRight', 'paulRumfluencerWalkRight', 'paulRumfluencerJump',
+          'mutantPaulBossStatic', 'mutantPaulBossWalk', 'mutantPaulBossPreAttack',
+          'mutantPaulBossPostAttack', 'strawberryRumBottle', 'paulZombieImpact'
+        ],
+        7: [
+          'level7BurrowMound', 'level7BurrowPeek', 'level7BurrowClimb',
+          'level7BossStatic', 'level7BossWalk', 'level7BossPreAttack',
+          'level7BossPostAttack', 'level7BossThrownItem',
+          'level7BunkerClosed', 'level7BunkerOpen'
+        ],
+        8: [
+          'level8BossStatic', 'level8BossWalk', 'level8BossAttack', 'level8BossThrownItem'
+        ],
+        9: [
+          'level9BossStatic', 'level9BossWalk', 'level9BossPreAttack',
+          'level9BossPostAttack', 'level9BossThrownItem',
+          'level7BunkerClosed', 'level7BunkerOpen'
+        ],
+        10: [
+          'level10Obstacle1', 'level10Obstacle2', 'level10BossStatic', 'level10BossWalk',
+          'level10BossPreAttack1', 'level10BossPostAttack1', 'level10BossPuck',
+          'level10BossPreAttack2', 'level10BossPostAttack2'
+        ]
+      };
+
+      const LEVEL_ART_LAYER_IDS = {
+        1: 'level1ArtLayer',
+        2: 'level2ArtLayer',
+        3: 'level3ArtLayer',
+        4: 'level4ArtLayer',
+        5: 'level5ArtLayer',
+        6: 'level6ArtLayer',
+        7: 'level7ArtLayer',
+        8: 'level8ArtLayer',
+        9: 'level9ArtLayer',
+        10: 'level10ArtLayer'
+      };
+
+      const allLevelArtLayerIds = [
+        'level1ArtLayer', 'level2ArtLayer', 'level3ArtLayer', 'level4ArtLayer',
+        'level5ArtLayer', 'level6ArtLayer', 'level7ArtLayer', 'level8ArtLayer',
+        'level9ArtLayer', 'level10ArtLayer', 'level10BossArtLayer', 'level5BossArtLayer'
+      ];
+
+      function getLevelArtLayerId(level, bossSurface = false) {
+        if (Number(level) === 5 && bossSurface) return 'level3ArtLayer';
+        if (Number(level) === 10 && bossSurface) return 'level10BossArtLayer';
+        return LEVEL_ART_LAYER_IDS[Number(level)] || '';
+      }
+
+      function shouldSkipReducedLevel10Frame(img, layerId) {
+        if (layerId === 'level10ArtLayer') {
+          return img.classList.contains('bg2') || img.classList.contains('bg4') || img.classList.contains('bg6');
+        }
+        if (layerId === 'level10BossArtLayer') {
+          return img.classList.contains('frame2') || img.classList.contains('frame4') || img.classList.contains('frame6');
+        }
+        return false;
+      }
+
+      function loadDomArtLayer(layerId) {
+        const layer = document.getElementById(layerId);
+        if (!layer || layer.dataset.loaded === '1') return;
+        layer.querySelectorAll('img[data-src]').forEach(img => {
+          if (shouldSkipReducedLevel10Frame(img, layerId)) return;
+          img.loading = 'eager';
+          img.decoding = 'async';
+          if (!img.getAttribute('src')) img.src = img.dataset.src;
+        });
+        layer.dataset.loaded = '1';
+      }
+
+      function releaseInactiveDomArt(activeLayerId) {
+        for (const layerId of allLevelArtLayerIds) {
+          if (layerId === activeLayerId) continue;
+          const layer = document.getElementById(layerId);
+          if (!layer || layer.dataset.loaded !== '1') continue;
+          layer.querySelectorAll('img[data-src]').forEach(img => img.removeAttribute('src'));
+          layer.dataset.loaded = '0';
+        }
+      }
+
+      function preloadDomArtForLevel(level, bossSurface = false) {
+        const layerId = getLevelArtLayerId(level, bossSurface);
+        if (layerId) loadDomArtLayer(layerId);
+      }
+
+      function activateDomArtForLevel(level, bossSurface = false) {
+        const layerId = getLevelArtLayerId(level, bossSurface);
+        if (!layerId) return;
+        loadDomArtLayer(layerId);
+        releaseInactiveDomArt(layerId);
+      }
+
+      function preloadImageKeys(assetKeys) {
+        const uniqueKeys = [...new Set(assetKeys || [])].filter(key => ASSETS[key]);
+        return Promise.all(uniqueKeys.map(key => loadImage(key, ASSETS[key])));
+      }
+
+      function getCharacterAssetKeys(character = selectedCharacter) {
+        return CHARACTER_ASSET_KEYS[character] || CHARACTER_ASSET_KEYS.brad;
+      }
+
+      function getLevelAssetKeys(level) {
+        return [
+          ...COMMON_CANVAS_ASSET_KEYS,
+          ...(LEVEL_CANVAS_ASSET_KEYS[Number(level)] || []),
+          ...getCharacterAssetKeys(selectedCharacter)
+        ];
+      }
+
+      function preloadCharacterAssets(character = selectedCharacter) {
+        return preloadImageKeys(getCharacterAssetKeys(character));
+      }
+
+      function preloadLevelAssets(level, bossSurface = false) {
+        preloadDomArtForLevel(level, bossSurface);
+        return preloadImageKeys(getLevelAssetKeys(level));
+      }
+
+      function releaseUnusedCanvasAssets(level) {
+        const keep = new Set(getLevelAssetKeys(level));
+        for (const [key, img] of Object.entries(images)) {
+          if (keep.has(key)) continue;
+          try { img.removeAttribute('src'); } catch (_) {}
+          delete images[key];
+          delete imageLoadPromises[key];
+        }
+      }
+
+      function activateLevelAssets(level, bossSurface = false) {
+        activateDomArtForLevel(level, bossSurface);
+        return preloadImageKeys(getLevelAssetKeys(level)).then(() => {
+          releaseUnusedCanvasAssets(level);
+        });
+      }
+
+      function updateDomLayerScale() {
+        if (!stageElement) return;
+        const scaleX = stageElement.clientWidth / W;
+        const scaleY = stageElement.clientHeight / H;
+        const transform = `scale(${scaleX}, ${scaleY})`;
+        if (enemyLayer) enemyLayer.style.transform = transform;
+        if (obstacleOcclusionLayer) obstacleOcclusionLayer.style.transform = transform;
+      }
+
       const keys = { left: false, right: false, up: false, down: false, jump: false, fire: false };
 
       let selectedCharacter = 'brad';
@@ -2552,120 +2713,129 @@ feat. Midnight Moon Strawberry Moonshine</div>
         mike: { name: 'Mike', stand: 'mikeGuide', walk: 'mikeGuideWalk', jump: 'mikeGuideJump' }
       };
 
-      const musicTracks = {
-        level1: new Audio(MUSIC.level1),
-        boss: new Audio(MUSIC.boss),
-        level2: new Audio(MUSIC.level2),
-        level3: new Audio(MUSIC.level3),
-        level4: new Audio(MUSIC.level4),
-        level5: new Audio(MUSIC.level5),
-        level6: new Audio(MUSIC.level6),
-        level7: new Audio(MUSIC.level7),
-        level8: new Audio(MUSIC.level8),
-        level9: new Audio(MUSIC.level9),
-        level10: new Audio(MUSIC.level10),
-        story: new Audio(MUSIC.story)
-      };
+      const musicAudio = new Audio();
+      musicAudio.loop = true;
+      musicAudio.preload = 'metadata';
+      musicAudio.volume = 0.275;
 
-      const storyNarrationTracks = {
-        slide1: new Audio(STORY_NARRATION.slide1),
-        slide2: new Audio(STORY_NARRATION.slide2),
-        slide3: new Audio(STORY_NARRATION.slide3),
-        slide4: new Audio(STORY_NARRATION.slide4),
-        slide5: new Audio(STORY_NARRATION.slide5),
-        slide6: new Audio(STORY_NARRATION.slide6),
-        slide7: new Audio(STORY_NARRATION.slide7),
-        slide8: new Audio(STORY_NARRATION.slide8),
-        slide9: new Audio(STORY_NARRATION.slide9),
-        slide10: new Audio(STORY_NARRATION.slide10),
-        slide11: new Audio(STORY_NARRATION.slide11),
-        slide12: new Audio(STORY_NARRATION.slide12),
-        slide13: new Audio(STORY_NARRATION.slide13),
-        slide14: new Audio(STORY_NARRATION.slide14),
-        slide15: new Audio(STORY_NARRATION.slide15),
-        slide16: new Audio(STORY_NARRATION.slide16),
-        slide17: new Audio(STORY_NARRATION.slide17),
-        level10Intro: new Audio(STORY_NARRATION.level10Intro)
-      };
+      const narrationAudio = new Audio();
+      narrationAudio.loop = false;
+      narrationAudio.preload = 'metadata';
+      narrationAudio.volume = 1;
 
-      Object.values(musicTracks).forEach(track => {
-        track.loop = true;
-        track.preload = 'auto';
-        track.volume = 0.275;
-      });
-      if (musicTracks.story) musicTracks.story.volume = 0.18;
-
-      Object.values(storyNarrationTracks).forEach(track => {
-        track.loop = false;
-        track.preload = 'auto';
-        track.volume = 1;
-      });
-
+      const loopSfx = Object.create(null);
+      const fallbackSfxPools = Object.create(null);
+      const fallbackSfxIndex = Object.create(null);
+      const sfxBuffers = Object.create(null);
+      const sfxBufferPromises = Object.create(null);
       const sfxVolume = 0.31;
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      let sfxAudioContext = null;
 
-      function makeSfxPool(src, count = 6, volume = sfxVolume) {
-        return Array.from({ length: count }, () => {
-          const audio = new Audio(src);
-          audio.preload = 'auto';
-          audio.volume = volume;
-          audio.load();
-          return audio;
-        });
+      function getSfxAudioContext() {
+        if (!AudioContextClass) return null;
+        if (!sfxAudioContext) sfxAudioContext = new AudioContextClass({ latencyHint: 'interactive' });
+        return sfxAudioContext;
       }
 
-      const sfxPools = {
-        laser: makeSfxPool(SFX.laser, 8),
-        jump: makeSfxPool(SFX.jump, 4),
-        health: makeSfxPool(SFX.health, 3),
-        recharge: makeSfxPool(SFX.recharge, 3)
-      };
+      function loadSfxBuffer(name) {
+        if (!SFX[name]) return Promise.resolve(null);
+        if (sfxBuffers[name]) return Promise.resolve(sfxBuffers[name]);
+        if (sfxBufferPromises[name]) return sfxBufferPromises[name];
 
-      const sfxPoolIndex = {
-        laser: 0,
-        jump: 0,
-        health: 0,
-        recharge: 0
-      };
+        const audioContext = getSfxAudioContext();
+        if (!audioContext || !window.fetch) return Promise.resolve(null);
 
-      const loopSfx = {
-        walk: new Audio(SFX.walk),
-        zombieAmbience: new Audio(SFX.zombieAmbience)
-      };
+        sfxBufferPromises[name] = fetch(SFX[name], { cache: 'force-cache', mode: 'cors' })
+          .then(response => {
+            if (!response.ok) throw new Error(`SFX ${name} failed`);
+            return response.arrayBuffer();
+          })
+          .then(buffer => audioContext.decodeAudioData(buffer.slice(0)))
+          .then(decoded => {
+            sfxBuffers[name] = decoded;
+            return decoded;
+          })
+          .catch(() => null);
 
-      loopSfx.walk.loop = true;
-      loopSfx.walk.preload = 'auto';
-      loopSfx.walk.volume = 0.18;
+        return sfxBufferPromises[name];
+      }
 
-      loopSfx.zombieAmbience.loop = true;
-      loopSfx.zombieAmbience.preload = 'auto';
-      loopSfx.zombieAmbience.volume = 0.2;
+      function playDecodedSfx(name) {
+        const audioContext = getSfxAudioContext();
+        const buffer = sfxBuffers[name];
+        if (!audioContext || !buffer) return false;
 
-      function playSfx(name) {
-        const pool = sfxPools[name];
-        if (!pool || sfxMuted) return;
-        const index = sfxPoolIndex[name] % pool.length;
+        try {
+          const source = audioContext.createBufferSource();
+          const gain = audioContext.createGain();
+          source.buffer = buffer;
+          gain.gain.value = sfxVolume;
+          source.connect(gain);
+          gain.connect(audioContext.destination);
+          source.start(0);
+          return true;
+        } catch (_) {
+          return false;
+        }
+      }
+
+      function playFallbackSfx(name) {
+        if (!SFX[name]) return;
+        if (!fallbackSfxPools[name]) {
+          fallbackSfxPools[name] = Array.from({ length: name === 'laser' ? 3 : 2 }, () => {
+            const audio = new Audio(SFX[name]);
+            audio.preload = 'metadata';
+            audio.volume = sfxVolume;
+            return audio;
+          });
+          fallbackSfxIndex[name] = 0;
+        }
+
+        const pool = fallbackSfxPools[name];
+        const index = fallbackSfxIndex[name] % pool.length;
+        fallbackSfxIndex[name] = index + 1;
         const sound = pool[index];
-        sfxPoolIndex[name] = index + 1;
         sound.currentTime = 0;
         sound.play().catch(() => {});
       }
 
+      function playSfx(name) {
+        if (sfxMuted) return;
+        const audioContext = getSfxAudioContext();
+        if (audioContext && audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+        if (playDecodedSfx(name)) return;
+        playFallbackSfx(name);
+        loadSfxBuffer(name);
+      }
+
+      function getLoopSfx(name) {
+        if (!SFX[name]) return null;
+        if (!loopSfx[name]) {
+          const audio = new Audio(SFX[name]);
+          audio.loop = true;
+          audio.preload = 'metadata';
+          audio.volume = name === 'walk' ? 0.18 : 0.2;
+          loopSfx[name] = audio;
+        }
+        return loopSfx[name];
+      }
+
       function primeAudio() {
-        Object.values(sfxPools).flat().forEach(sound => sound.load());
-        Object.values(loopSfx).forEach(sound => sound.load());
-        Object.values(musicTracks).forEach(track => track.load());
-        Object.values(storyNarrationTracks).forEach(track => track.load());
+        const audioContext = getSfxAudioContext();
+        if (audioContext && audioContext.state === 'suspended') audioContext.resume().catch(() => {});
+        ['laser', 'jump', 'health', 'recharge'].forEach(loadSfxBuffer);
       }
 
       function playLoopSfx(name) {
-        const sound = loopSfx[name];
-        if (!sound || sfxMuted || state.paused || !state.running || state.gameOver) return;
+        const sound = getLoopSfx(name);
+        if (!sound || sfxMuted || state.paused || !state.running || state.gameOver || !sound.paused) return;
         sound.play().catch(() => {});
       }
 
       function pauseLoopSfx(name) {
         const sound = loopSfx[name];
-        if (sound) sound.pause();
+        if (sound && !sound.paused) sound.pause();
       }
 
       function stopLoopSfx(name) {
@@ -2688,19 +2858,20 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       function stopStorySequenceAudio(resetTime = true) {
         stopStoryNarration(resetTime);
-        if (musicTracks.story) {
-          musicTracks.story.pause();
-          if (resetTime) musicTracks.story.currentTime = 0;
-          if (currentMusicKey === 'story') currentMusicKey = null;
+        if (currentMusicKey === 'story') {
+          musicAudio.pause();
+          if (resetTime) musicAudio.currentTime = 0;
+          currentMusicKey = null;
         }
       }
 
       function playStoryNarration(key) {
         stopStoryNarration(true);
-        if (!key || !storyNarrationTracks[key]) return;
-        currentStoryNarration = storyNarrationTracks[key];
-        currentStoryNarration.currentTime = 0;
-        currentStoryNarration.play().catch(() => {});
+        if (!key || !STORY_NARRATION[key]) return;
+        narrationAudio.src = STORY_NARRATION[key];
+        narrationAudio.currentTime = 0;
+        currentStoryNarration = narrationAudio;
+        narrationAudio.play().catch(() => {});
       }
 
       const waveLines = [
@@ -2874,49 +3045,37 @@ feat. Midnight Moon Strawberry Moonshine</div>
         level10FinalBlackAlpha: 0
       };
 
-      const IS_IOS_WEBKIT = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-      const IMAGE_LOAD_CONCURRENCY = IS_IOS_WEBKIT ? 4 : 8;
-      const imageLoadQueue = [];
-      let activeImageLoads = 0;
-
-      function pumpImageLoadQueue() {
-        while (activeImageLoads < IMAGE_LOAD_CONCURRENCY && imageLoadQueue.length) {
-          const job = imageLoadQueue.shift();
-          activeImageLoads += 1;
-
-          const img = new Image();
-          img.crossOrigin = 'anonymous';
-          img.decoding = 'async';
-
-          const finish = (result) => {
-            activeImageLoads = Math.max(0, activeImageLoads - 1);
-            job.resolve(result);
-            pumpImageLoadQueue();
-          };
-
-          img.onload = () => {
-            images[job.key] = img;
-            finish(img);
-          };
-          img.onerror = () => finish(null);
-          img.src = job.src;
-        }
-      }
-
       function loadImage(key, src) {
-        return new Promise((resolve) => {
-          imageLoadQueue.push({ key, src, resolve });
-          pumpImageLoadQueue();
+        if (images[key] && images[key].complete && images[key].naturalWidth) {
+          return Promise.resolve(images[key]);
+        }
+        if (imageLoadPromises[key]) return imageLoadPromises[key];
+
+        imageLoadPromises[key] = new Promise((resolve) => {
+          const img = new Image();
+          img.decoding = 'async';
+          img.onload = () => {
+            images[key] = img;
+            resolve(img);
+          };
+          img.onerror = () => {
+            delete imageLoadPromises[key];
+            resolve(null);
+          };
+          img.src = src;
         });
+
+        return imageLoadPromises[key];
       }
+
+      const TOUCH_CONTROL_DEVICE = (
+        (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
 
       function isTouchControlDevice() {
-        return (
-          (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ||
-          navigator.maxTouchPoints > 0 ||
-          navigator.msMaxTouchPoints > 0
-        );
+        return TOUCH_CONTROL_DEVICE;
       }
 
       function showInputBadge(message, duration = 1.8) {
@@ -2961,23 +3120,26 @@ feat. Midnight Moon Strawberry Moonshine</div>
         );
       }
 
-      function updateAdaptiveControls() {
+      let lastAdaptiveControlSignature = '';
+
+      function updateAdaptiveControls(force = false) {
         if (!controls) return;
 
         const shouldShowTouchControls = isTouchControlDevice() && !controllerActive;
-        controls.classList.toggle('hiddenControls', !shouldShowTouchControls);
-
         const showClimbButton = shouldShowTouchControls && isClimbButtonAvailable();
         const showBunkerButton = shouldShowTouchControls && isBunkerButtonAvailable();
+        const signature = `${shouldShowTouchControls}|${showClimbButton}|${showBunkerButton}`;
+        if (!force && signature === lastAdaptiveControlSignature) return;
+        lastAdaptiveControlSignature = signature;
+
+        controls.classList.toggle('hiddenControls', !shouldShowTouchControls);
         if (mobileClimbBtn) mobileClimbBtn.classList.toggle('showClimbButton', showClimbButton);
         if (mobileBunkerBtn) mobileBunkerBtn.classList.toggle('showClimbButton', showBunkerButton);
         if (!showClimbButton && shouldShowTouchControls) keys.up = false;
         if (!showBunkerButton && shouldShowTouchControls) keys.down = false;
 
-        if (shouldShowTouchControls) {
-          if (inputModeBadge && !inputModeBadge.classList.contains('show')) {
-            inputModeBadge.textContent = showClimbButton ? 'CLIMB AVAILABLE' : (showBunkerButton ? 'BUNKER OPEN' : 'TOUCH CONTROLS');
-          }
+        if (shouldShowTouchControls && inputModeBadge && !inputModeBadge.classList.contains('show')) {
+          inputModeBadge.textContent = showClimbButton ? 'CLIMB AVAILABLE' : (showBunkerButton ? 'BUNKER OPEN' : 'TOUCH CONTROLS');
         }
       }
 
@@ -3635,32 +3797,28 @@ feat. Midnight Moon Strawberry Moonshine</div>
       }
 
       function stopAllMusic() {
-        Object.values(musicTracks).forEach(track => {
-          track.pause();
-          track.currentTime = 0;
-        });
+        musicAudio.pause();
+        musicAudio.currentTime = 0;
         currentMusicKey = null;
         stopAllLoopSfx();
       }
 
       function playMusic(key) {
-        if (musicMuted || !musicTracks[key]) return;
-        if (currentMusicKey === key && !musicTracks[key].paused) return;
+        if (musicMuted || !MUSIC[key]) return;
 
-        Object.entries(musicTracks).forEach(([trackKey, track]) => {
-          if (trackKey !== key) track.pause();
-        });
+        if (currentMusicKey !== key) {
+          musicAudio.pause();
+          musicAudio.src = MUSIC[key];
+          musicAudio.currentTime = 0;
+          musicAudio.volume = key === 'story' ? 0.18 : 0.275;
+          currentMusicKey = key;
+        }
 
-        const track = musicTracks[key];
-        if (currentMusicKey !== key) track.currentTime = 0;
-        currentMusicKey = key;
-        track.play().catch(() => {});
+        if (musicAudio.paused) musicAudio.play().catch(() => {});
       }
 
       function pauseCurrentMusic() {
-        if (currentMusicKey && musicTracks[currentMusicKey]) {
-          musicTracks[currentMusicKey].pause();
-        }
+        if (!musicAudio.paused) musicAudio.pause();
         pauseLoopSfx('walk');
         pauseLoopSfx('zombieAmbience');
       }
@@ -3875,9 +4033,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
         state.kevinNpc = null;
         state.savannaNpc = null;
 
+        activateLevelAssets(state.level, state.level5BossSurface || state.level10BossSurface);
         updateHud();
-        tryFullscreen();
-        tryLockLandscape();
         updateOrientationNotice();
         updateMusicForMode();
         showWaveBanner('Saved Run Loaded!', `Level ${state.level} - Wave ${state.wave}`, 2200);
@@ -3892,7 +4049,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
         }
         if (state.boss && state.boss.el) state.boss.el.remove();
         enemyLayer.innerHTML = '';
-        if (obstacleOcclusionLayer) obstacleOcclusionLayer.innerHTML = '';
+        clearObstacleOccluders();
       }
 
       function shouldUseBossWalkFrame() {
@@ -4213,6 +4370,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
         if (showTitle) {
           startOverlay.style.display = 'block';
           if (characterMenuOverlay) characterMenuOverlay.classList.remove('show');
+          releaseInactiveDomArt('');
+          lastLevelArtSignature = '';
         }
         updateDemoBadge();
       }
@@ -4228,25 +4387,12 @@ feat. Midnight Moon Strawberry Moonshine</div>
         pauseOverlay.style.display = 'none';
 
         selectedCharacter = 'brad';
+        activateLevelAssets(1, false);
         syncCharacterCards();
         primeAudio();
         resetGame({ demoMode: true });
         state.demoMode = true;
-        tryFullscreen();
-        tryLockLandscape();
-        window.addEventListener('resize', () => {
         updateOrientationNotice();
-        enterFullscreenOnLandscape();
-      });
-
-      window.addEventListener('orientationchange', () => {
-        updateOrientationNotice();
-        enterFullscreenOnLandscape();
-        setTimeout(enterFullscreenOnLandscape, 150);
-        setTimeout(enterFullscreenOnLandscape, 450);
-      });
-
-      updateOrientationNotice();
 
         state.health = 999;
         state.laserEnergy = maxLaserEnergy;
@@ -4268,6 +4414,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       function startDevLevel(level, targetMode = 'wave') {
         stopDemoMode(false);
+        preloadLevelAssets(Number(level) || 1, targetMode === 'boss');
 
         if (!isCharacterUnlocked(selectedCharacter)) selectedCharacter = 'brad';
 
@@ -4401,6 +4548,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       function startGame() {
         stopDemoMode(false);
         if (!isCharacterUnlocked(selectedCharacter)) selectedCharacter = 'brad';
+        activateLevelAssets(1, false);
         hideStoryOverlay();
         startOverlay.style.display = 'none';
         if (characterMenuOverlay) characterMenuOverlay.classList.remove('show');
@@ -4426,12 +4574,16 @@ feat. Midnight Moon Strawberry Moonshine</div>
         state.paused = true;
         pauseOverlay.style.display = 'grid';
         syncCharacterCards();
+        lastLevelArtSignature = '';
+        updateLevelArtLayer();
         updateMusicForMode();
       }
 
       function resumeGame() {
         state.paused = false;
         pauseOverlay.style.display = 'none';
+        lastLevelArtSignature = '';
+        updateLevelArtLayer();
         updateMusicForMode();
       }
 
@@ -4459,6 +4611,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
         hideStoryOverlay();
         if (characterMenuOverlay) characterMenuOverlay.classList.remove('show');
         startOverlay.style.display = 'block';
+        releaseInactiveDomArt('');
+        lastLevelArtSignature = '';
 
         rotateNotice.classList.remove('forceHide');
         updateDemoBadge();
@@ -4476,108 +4630,39 @@ feat. Midnight Moon Strawberry Moonshine</div>
         state.gameOver = true;
         finalScore.textContent = state.score;
         gameOverOverlay.style.display = 'grid';
+        lastLevelArtSignature = '';
+        updateLevelArtLayer();
         stopAllMusic();
       }
 
       function getGameShellElement() {
-        return document.getElementById('gameShell') ||
-          document.getElementById('shell') ||
-          shell ||
-          document.documentElement;
+        return document.getElementById('gameShell') || document.getElementById('shell') || shell || document.documentElement;
       }
 
-      function tryFullscreen() {
-        const target = getGameShellElement();
-        if (!target) return;
-
-        if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) return;
-
-        const request =
-          target.requestFullscreen ||
-          target.webkitRequestFullscreen ||
-          target.msRequestFullscreen;
-
-        if (request) {
-          try {
-            const result = request.call(target);
-            if (result && result.catch) result.catch(() => {});
-          } catch (_) {}
-        }
-      }
-
-      function tryFullscreenOnLoadFromArcade() {
-        const ref = document.referrer || '';
-        const fromIndex = /(?:^|\/)index\.html(?:$|[?#])/i.test(ref) || ref.endsWith('/index.html');
-
-        // Works when the browser preserves the launch click/controller press as a user gesture.
-        // If blocked, the existing tap/click-to-fullscreen fallback still handles it.
-        if (fromIndex || !ref) {
-          setTimeout(() => {
-            tryFullscreen();
-            tryLockLandscape();
-            updateOrientationNotice();
-          }, 0);
-
-          setTimeout(() => {
-            tryFullscreen();
-            tryLockLandscape();
-            updateOrientationNotice();
-          }, 250);
-        }
-      }
-
-      function tryLockLandscape() {
-        if (screen.orientation && screen.orientation.lock) {
-          try {
-            const result = screen.orientation.lock('landscape');
-            if (result && result.catch) result.catch(() => {});
-          } catch (_) {}
-        }
-      }
-
-      let fullscreenArmed = false;
+      // iOS Safari build: do not request browser fullscreen or orientation lock.
+      // Keeping the game centered in a 16:9 stage is more reliable and avoids repeated blocked calls.
+      function tryFullscreen() {}
+      function tryFullscreenOnLoadFromArcade() {}
+      function tryLockLandscape() {}
+      function armFullscreen() {}
+      function enterFullscreenOnLandscape() {}
 
       function isLandscapeNow() {
         return window.innerWidth >= window.innerHeight ||
-          (screen.orientation && screen.orientation.type && screen.orientation.type.includes('landscape')) ||
           (typeof window.orientation === 'number' && Math.abs(window.orientation) === 90);
       }
 
-      function armFullscreen() {
-        fullscreenArmed = true;
-      }
-
-      function enterFullscreenOnLandscape() {
-        if (!isLandscapeNow()) return;
-
-        // Fullscreen usually needs a user gesture. Once the player has tapped anything,
-        // fullscreenArmed lets rotation reuse that intent on browsers that allow it.
-        if (!fullscreenArmed) return;
-
-        tryFullscreen();
-
-        // Re-run after Android browser chrome finishes moving.
-        setTimeout(tryFullscreen, 120);
-        setTimeout(tryFullscreen, 360);
-        setTimeout(updateOrientationNotice, 420);
-      }
-
       function isLikelyPhone() {
-        return window.matchMedia('(pointer: coarse)').matches && Math.min(window.innerWidth, window.innerHeight) < 700;
+        return isTouchControlDevice() && Math.min(window.innerWidth, window.innerHeight) < 700;
       }
 
       function updateOrientationNotice() {
-        const viewportLandscape = window.innerWidth >= window.innerHeight;
-        const mediaLandscape = window.matchMedia && window.matchMedia('(orientation: landscape)').matches;
-        const screenLandscape = screen.orientation && screen.orientation.type && screen.orientation.type.includes('landscape');
-        const oldIOSLandscape = typeof window.orientation === 'number' && Math.abs(window.orientation) === 90;
-        const isLandscape = viewportLandscape || mediaLandscape || screenLandscape || oldIOSLandscape;
-
+        const isLandscape = isLandscapeNow() ||
+          (window.matchMedia && window.matchMedia('(orientation: landscape)').matches);
         const shouldShow = isLikelyPhone() && !isLandscape && !state.running;
         rotateNotice.classList.toggle('forceHide', !shouldShow);
         rotateNotice.style.display = shouldShow ? 'grid' : 'none';
-
-        if (isLandscape) enterFullscreenOnLandscape();
+        updateDomLayerScale();
       }
 
       function getWaveLength(level, wave) {
@@ -4678,6 +4763,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       }
 
       function startLevel5SurfaceIntro() {
+        preloadLevelAssets(5, true);
         state.level5BossSurface = true;
         state.mode = 'surfaceIntro';
         state.climbingLadder = false;
@@ -4720,6 +4806,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
 
       function startLevel10BossSurfaceIntro() {
+        preloadLevelAssets(10, true);
         state.level10BossSurface = true;
         state.mode = 'surfaceIntro';
         state.climbingLadder = false;
@@ -5225,6 +5312,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       function completeLevelTransition(nextLevel) {
         if (state.demoMode) cycleDemoCharacter();
+        activateLevelAssets(nextLevel, false);
 
         const previousLevel = state.level;
         const enteringLevel10FromHatch = previousLevel === 9 && state.level9Bunker && state.level9Bunker.entered;
@@ -5340,6 +5428,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
           9: STORY_SEQUENCES.level9Intro,
           10: STORY_SEQUENCES.level10Intro
         };
+
+        preloadLevelAssets(nextLevel, false);
 
         const sequence = introMap[nextLevel];
         if (sequence) {
@@ -6043,7 +6133,9 @@ feat. Midnight Moon Strawberry Moonshine</div>
       }
 
       function makeParticles(x, y, count, color) {
-        for (let i = 0; i < count; i++) {
+        const available = Math.max(0, 150 - state.particles.length);
+        const particleCount = Math.min(count, available);
+        for (let i = 0; i < particleCount; i++) {
           state.particles.push({
             x,
             y,
@@ -6251,64 +6343,83 @@ feat. Midnight Moon Strawberry Moonshine</div>
         }
       }
 
+      const obstacleOccluderEntries = new Map();
+
+      function clearObstacleOccluders() {
+        for (const el of obstacleOccluderEntries.values()) el.remove();
+        obstacleOccluderEntries.clear();
+        if (obstacleOcclusionLayer) obstacleOcclusionLayer.style.display = 'none';
+      }
+
       function updateObstacleOcclusionDom() {
         if (!obstacleOcclusionLayer) return;
-        obstacleOcclusionLayer.innerHTML = '';
 
-        // Keep enemies/bosses above scene art, but redraw only the gameplay
-        // obstacles on a thin foreground layer. This gives the classic
-        // "zombies pass behind obstacles" look without burying them behind
-        // the whole canvas/background again.
-        const occluders = [...state.obstacles];
-        if (state.cover) occluders.push(state.cover);
+        const activeObstacles = [...state.obstacles];
+        if (state.cover) activeObstacles.push(state.cover);
+        const activeSet = new Set(activeObstacles);
 
-        if (!occluders.length) {
+        for (const [obstacle, el] of obstacleOccluderEntries) {
+          if (activeSet.has(obstacle)) continue;
+          el.remove();
+          obstacleOccluderEntries.delete(obstacle);
+        }
+
+        if (!activeObstacles.length) {
           obstacleOcclusionLayer.style.display = 'none';
           return;
         }
 
         obstacleOcclusionLayer.style.display = 'block';
 
-        for (const obstacle of occluders) {
+        for (const obstacle of activeObstacles) {
           if (!obstacle) continue;
+          let el = obstacleOccluderEntries.get(obstacle);
           const src = getObstacleOccluderAsset(obstacle);
-          const el = document.createElement(src ? 'img' : 'div');
-          el.className = 'obstacleOccluder';
-          if (src) {
+
+          if (!el) {
+            el = document.createElement(src ? 'img' : 'div');
+            el.className = 'obstacleOccluder';
+            if (src) {
+              el.src = src;
+              el.alt = '';
+            } else {
+              styleObstacleFallbackOccluder(el, obstacle);
+            }
+            obstacleOcclusionLayer.appendChild(el);
+            obstacleOccluderEntries.set(obstacle, el);
+          } else if (src && el.tagName === 'IMG' && el.src !== src) {
             el.src = src;
-            el.alt = '';
-          } else {
-            styleObstacleFallbackOccluder(el, obstacle);
           }
 
           const crateShakeActive = obstacle.type === 'rumfluencerCrate' && (state.mode === 'boss' || state.mode === 'bossIntro');
           const shakeClock = (state.lastTime || 0) * 38;
           const shakeX = crateShakeActive ? Math.round(Math.sin(shakeClock) * 3 + Math.sin(shakeClock * 0.47) * 2) : 0;
           const shakeY = crateShakeActive ? Math.round(Math.cos(shakeClock * 0.82) * 2) : 0;
-
           const visualW = obstacle.visualW || obstacle.w;
           const visualH = obstacle.visualH || obstacle.h;
           const visualOffsetX = obstacle.visualOffsetX || 0;
           const visualOffsetY = obstacle.visualOffsetY || 0;
-          el.style.left = `${((obstacle.x + visualOffsetX + shakeX) / W) * 100}%`;
-          el.style.top = `${((obstacle.y + visualOffsetY + shakeY) / H) * 100}%`;
-          el.style.width = `${(visualW / W) * 100}%`;
-          el.style.height = `${(visualH / H) * 100}%`;
-          obstacleOcclusionLayer.appendChild(el);
+
+          const nextW = `${visualW}px`;
+          const nextH = `${visualH}px`;
+          if (el.style.width !== nextW) el.style.width = nextW;
+          if (el.style.height !== nextH) el.style.height = nextH;
+          el.style.transform = `translate3d(${obstacle.x + visualOffsetX + shakeX}px, ${obstacle.y + visualOffsetY + shakeY}px, 0)`;
         }
       }
 
       function updateEnemyDom() {
         for (const enemy of state.enemies) {
           const visual = getEnemyVisual(enemy);
-          if (enemy.el && visual) {
-            if (enemy.el.src !== visual.src) enemy.el.src = visual.src;
-            enemy.el.style.left = `${(visual.x / W) * 100}%`;
-            enemy.el.style.top = `${(visual.y / H) * 100}%`;
-            enemy.el.style.width = `${(visual.w / W) * 100}%`;
-            enemy.el.style.height = `${(visual.h / H) * 100}%`;
-            enemy.el.style.transform = visual.transform || 'scaleX(-1)';
-          }
+          if (!enemy.el || !visual) continue;
+          if (enemy.el.src !== visual.src) enemy.el.src = visual.src;
+
+          const nextW = `${visual.w}px`;
+          const nextH = `${visual.h}px`;
+          if (enemy.el.style.width !== nextW) enemy.el.style.width = nextW;
+          if (enemy.el.style.height !== nextH) enemy.el.style.height = nextH;
+          const flip = visual.transform === 'scaleX(1)' ? 1 : -1;
+          enemy.el.style.transform = `translate3d(${visual.x}px, ${visual.y}px, 0) scaleX(${flip})`;
         }
 
         if (state.boss && state.boss.el) {
@@ -6318,11 +6429,15 @@ feat. Midnight Moon Strawberry Moonshine</div>
           const desiredSrc = getBossSpriteUrl(b);
           if (b.el.src !== desiredSrc) b.el.src = desiredSrc;
 
-          b.el.style.left = `${((b.x + windupShake) / W) * 100}%`;
-          b.el.style.top = `${((b.y + bob) / H) * 100}%`;
-          b.el.style.width = `${(b.w / W) * 100}%`;
-          b.el.style.height = `${(b.h / H) * 100}%`;
-          b.el.style.transform = (state.level === 2 || state.level === 3 || state.level === 4 || state.level === 6 || state.level === 7 || state.level === 8 || state.level === 9 || (state.level === 10 && state.level10BossSurface)) ? 'scaleX(1)' : (state.level === 5 && state.level5BossSurface ? 'scaleX(1)' : 'scaleX(-1)');
+          const nextW = `${b.w}px`;
+          const nextH = `${b.h}px`;
+          if (b.el.style.width !== nextW) b.el.style.width = nextW;
+          if (b.el.style.height !== nextH) b.el.style.height = nextH;
+          const noFlip = state.level === 2 || state.level === 3 || state.level === 4 || state.level === 6 ||
+            state.level === 7 || state.level === 8 || state.level === 9 ||
+            (state.level === 10 && state.level10BossSurface) ||
+            (state.level === 5 && state.level5BossSurface);
+          b.el.style.transform = `translate3d(${b.x + windupShake}px, ${b.y + bob}px, 0) scaleX(${noFlip ? 1 : -1})`;
         }
       }
 
@@ -7059,17 +7174,9 @@ feat. Midnight Moon Strawberry Moonshine</div>
         keys.fire = false;
 
         clearDomSprites();
-        Object.entries(musicTracks).forEach(([trackKey, track]) => {
-          if (trackKey === 'story') return;
-          track.pause();
-          track.currentTime = 0;
-        });
         stopAllLoopSfx();
         hideStoryOverlay(true);
-        if (!musicMuted && musicTracks.story) {
-          currentMusicKey = 'story';
-          musicTracks.story.play().catch(() => {});
-        }
+        if (!musicMuted) playMusic('story');
         pauseOverlay.style.display = 'none';
         gameOverOverlay.style.display = 'none';
         if (characterMenuOverlay) characterMenuOverlay.classList.remove('show');
@@ -7693,19 +7800,28 @@ feat. Midnight Moon Strawberry Moonshine</div>
         state.particles = state.particles.filter(particle => particle.life > 0);
       }
 
+      let lastLevelArtSignature = '';
+
       function updateLevelArtLayer() {
+        const gameplayVisible = !!(state.running || state.gameOver);
         const freeze = state.mode === 'boss' || state.mode === 'bossIntro' || state.mode === 'levelClear' || state.mode === 'victory' || !state.running;
-        const showLevel1Art = state.level === 1;
-        const showLevel2Art = state.level === 2;
-        const showLevel3Art = state.level === 3 || (state.level === 5 && state.level5BossSurface);
-        const showLevel4Art = state.level === 4;
-        const showLevel5Art = state.level === 5 && !state.level5BossSurface;
-        const showLevel6Art = state.level === 6;
-        const showLevel7Art = state.level === 7;
-        const showLevel8Art = state.level === 8;
-        const showLevel9Art = state.level === 9;
-        const showLevel10Art = state.level === 10 && !state.level10BossSurface;
-        const showLevel10BossArt = state.level === 10 && state.level10BossSurface;
+        const signature = `${gameplayVisible}|${state.level}|${state.mode}|${state.paused}|${state.gameOver}|${state.level5BossSurface}|${state.level10BossSurface}|${!!(state.level7ExitSign && state.level7ExitSign.open)}`;
+        if (signature === lastLevelArtSignature) return;
+        lastLevelArtSignature = signature;
+
+        if (gameplayVisible) activateDomArtForLevel(state.level, state.level5BossSurface || state.level10BossSurface);
+
+        const showLevel1Art = gameplayVisible && state.level === 1;
+        const showLevel2Art = gameplayVisible && state.level === 2;
+        const showLevel3Art = gameplayVisible && (state.level === 3 || (state.level === 5 && state.level5BossSurface));
+        const showLevel4Art = gameplayVisible && state.level === 4;
+        const showLevel5Art = gameplayVisible && state.level === 5 && !state.level5BossSurface;
+        const showLevel6Art = gameplayVisible && state.level === 6;
+        const showLevel7Art = gameplayVisible && state.level === 7;
+        const showLevel8Art = gameplayVisible && state.level === 8;
+        const showLevel9Art = gameplayVisible && state.level === 9;
+        const showLevel10Art = gameplayVisible && state.level === 10 && !state.level10BossSurface;
+        const showLevel10BossArt = gameplayVisible && state.level === 10 && state.level10BossSurface;
 
         if (level1ArtLayer) {
           level1ArtLayer.style.display = showLevel1Art ? 'block' : 'none';
@@ -9389,6 +9505,13 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       function loop(timestamp) {
         const t = timestamp / 1000;
+
+        if (document.hidden || !state.running || state.paused || state.mode === 'story' || isStoryOverlayVisible() || creditsActive) {
+          state.lastTime = t;
+          requestAnimationFrame(loop);
+          return;
+        }
+
         const dt = Math.min(0.033, state.lastTime ? t - state.lastTime : 0.016);
         state.lastTime = t;
         update(dt);
@@ -9404,6 +9527,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
           e.preventDefault();
           if (demoActive) return;
           btn.classList.add('isDown');
+          try { btn.setPointerCapture(e.pointerId); } catch (_) {}
 
           if (hold) keys[hold] = true;
           if (tap === 'jump') jump();
@@ -9421,10 +9545,9 @@ feat. Midnight Moon Strawberry Moonshine</div>
           if (tap === 'fire') keys.fire = false;
         };
 
-        btn.addEventListener('pointerdown', down);
-        btn.addEventListener('pointerup', up);
-        btn.addEventListener('pointercancel', up);
-        btn.addEventListener('pointerleave', up);
+        btn.addEventListener('pointerdown', down, { passive: false });
+        btn.addEventListener('pointerup', up, { passive: false });
+        btn.addEventListener('pointercancel', up, { passive: false });
       }
 
       function syncCharacterCards() {
@@ -9435,6 +9558,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       }
 
       document.querySelectorAll('.btn').forEach(bindButton);
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
 
       function isStoryOverlayVisible() {
         return !!(storyOverlay && storyOverlay.classList.contains('show') && isVisibleElement(storyOverlay));
@@ -9491,6 +9615,8 @@ feat. Midnight Moon Strawberry Moonshine</div>
         if (!musicMuted) playMusic('story');
         setStorySlide(currentStoryIndex);
         storyOverlay.classList.add('show');
+        lastLevelArtSignature = '';
+        updateLevelArtLayer();
         clearGamepadFocus();
         gamepadMenuIndex = 0;
         lastMenuSignature = '';
@@ -9536,6 +9662,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
             return;
           }
           selectedCharacter = nextCharacter;
+          preloadCharacterAssets(nextCharacter);
           syncCharacterCards();
         });
       });
@@ -9640,6 +9767,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       backToTitleBtn.addEventListener('click', () => {
         characterMenuOverlay.classList.remove('show');
         startOverlay.style.display = 'block';
+        releaseInactiveDomArt('');
         clearGamepadFocus();
         gamepadMenuIndex = 0;
         lastMenuSignature = '';
@@ -9681,6 +9809,16 @@ feat. Midnight Moon Strawberry Moonshine</div>
       updateMuteButton();
       updateAdaptiveControls();
 
+      window.addEventListener('blur', () => {
+        keys.left = false;
+        keys.right = false;
+        keys.up = false;
+        keys.down = false;
+        keys.jump = false;
+        keys.fire = false;
+        document.querySelectorAll('.btn.isDown').forEach(btn => btn.classList.remove('isDown'));
+      });
+
       window.addEventListener('gamepadconnected', (event) => {
         setControllerActive(event.gamepad);
       });
@@ -9692,12 +9830,11 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       window.addEventListener('resize', () => {
         updateOrientationNotice();
-        updateAdaptiveControls();
+        updateDomLayerScale();
+        updateAdaptiveControls(true);
       });
       window.addEventListener('orientationchange', () => {
-        setTimeout(() => { updateOrientationNotice(); updateAdaptiveControls(); }, 120);
-        setTimeout(() => { updateOrientationNotice(); updateAdaptiveControls(); }, 400);
-        setTimeout(() => { updateOrientationNotice(); updateAdaptiveControls(); }, 900);
+        setTimeout(() => { updateOrientationNotice(); updateAdaptiveControls(true); }, 180);
       });
 
       document.addEventListener('visibilitychange', () => {
@@ -9711,360 +9848,16 @@ feat. Midnight Moon Strawberry Moonshine</div>
         }
       });
 
-      setInterval(updateOrientationNotice, 500);
 
-
-      function collectRemoteAssetUrls() {
-        const source = document.documentElement.innerHTML;
-        const matches = source.match(/https:\/\/static\.wixstatic\.com\/(?:media|mp3)\/[^'"<>\s)]+/g) || [];
-        return Array.from(new Set(matches.map((url) => url.replace(/&amp;/g, '&'))));
-      }
-
-      function getRemoteAssetKind(url) {
-        if (/\.(?:png|jpe?g|gif|webp)(?:[?#]|$)/i.test(url)) return 'image';
-        if (/\.(?:mp3|m4a|aac|wav|ogg)(?:[?#]|$)/i.test(url)) return 'audio';
-        return 'other';
-      }
-
-      function waitForImageWarmup(url, timeoutMs = 20000) {
-        return new Promise((resolve) => {
-          const img = new Image();
-          let settled = false;
-          const finish = (ok) => {
-            if (settled) return;
-            settled = true;
-            clearTimeout(timer);
-            resolve(ok);
-          };
-          const timer = setTimeout(() => finish(false), timeoutMs);
-          img.crossOrigin = 'anonymous';
-          img.decoding = 'async';
-          img.onload = () => finish(true);
-          img.onerror = () => finish(false);
-          img.src = url;
-        });
-      }
-
-      function waitForAudioWarmup(url, timeoutMs = 24000) {
-        return new Promise((resolve) => {
-          const audio = new Audio();
-          let settled = false;
-          const cleanup = () => {
-            audio.removeEventListener('canplaythrough', ready);
-            audio.removeEventListener('loadeddata', loaded);
-            audio.removeEventListener('error', failed);
-          };
-          const finish = (ok) => {
-            if (settled) return;
-            settled = true;
-            clearTimeout(timer);
-            cleanup();
-            audio.pause();
-            audio.removeAttribute('src');
-            audio.load();
-            resolve(ok);
-          };
-          const ready = () => finish(true);
-          const loaded = () => {
-            if (audio.readyState >= 3) finish(true);
-          };
-          const failed = () => finish(false);
-          const timer = setTimeout(() => finish(audio.readyState >= 2), timeoutMs);
-          audio.preload = 'auto';
-          audio.addEventListener('canplaythrough', ready, { once: true });
-          audio.addEventListener('loadeddata', loaded);
-          audio.addEventListener('error', failed, { once: true });
-          audio.src = url;
-          audio.load();
-        });
-      }
-
-      async function consumeFetchBody(response) {
-        if (!response.body || typeof response.body.getReader !== 'function') {
-          await response.blob();
-          return;
-        }
-        const reader = response.body.getReader();
-        while (true) {
-          const { done } = await reader.read();
-          if (done) break;
-        }
-      }
-
-      async function warmRemoteAsset(url) {
-        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
-        const timeout = setTimeout(() => {
-          if (controller) controller.abort();
-        }, 30000);
-
-        try {
-          const response = await fetch(url, {
-            mode: 'cors',
-            credentials: 'omit',
-            cache: 'force-cache',
-            signal: controller ? controller.signal : undefined
-          });
-          if (!response.ok) throw new Error(`HTTP ${response.status}`);
-          await consumeFetchBody(response);
-          clearTimeout(timeout);
-          return true;
-        } catch (error) {
-          clearTimeout(timeout);
-          const kind = getRemoteAssetKind(url);
-          if (kind === 'image') return waitForImageWarmup(url);
-          if (kind === 'audio') return waitForAudioWarmup(url);
-          return false;
-        }
-      }
-
-      async function warmAssetManifest(urls, onProgress, shouldStop) {
-        const limit = IS_IOS_WEBKIT ? 3 : 6;
-        let cursor = 0;
-        let completed = 0;
-        let failed = 0;
-
-        async function worker() {
-          while (true) {
-            if (typeof shouldStop === 'function' && shouldStop()) return;
-            const index = cursor;
-            cursor += 1;
-            if (index >= urls.length) return;
-            const ok = await warmRemoteAsset(urls[index]);
-            completed += 1;
-            if (!ok) failed += 1;
-            if (typeof onProgress === 'function') {
-              onProgress(completed, urls.length, failed, urls[index]);
-            }
-          }
-        }
-
-        await Promise.all(Array.from({ length: Math.min(limit, urls.length || 1) }, worker));
-        return { completed, failed, skipped: Math.max(0, urls.length - completed) };
-      }
-
-      function updateAssetLoader(completed, total, failed = 0, status = 'Downloading game assets...') {
-        const overlay = document.getElementById('assetLoadingOverlay');
-        const fill = document.getElementById('assetLoaderFill');
-        const label = document.getElementById('assetLoaderStatus');
-        const count = document.getElementById('assetLoaderCount');
-        if (!overlay) return;
-        const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
-        if (fill) fill.style.width = `${Math.max(0, Math.min(100, percent))}%`;
-        if (label) label.textContent = status;
-        if (count) {
-          count.textContent = total > 0
-            ? `${completed} / ${total} files · ${percent}%${failed ? ` · ${failed} retry skipped` : ''}`
-            : 'Preparing files...';
-        }
-      }
-
-      function closeAssetLoadingOverlay() {
-        const overlay = document.getElementById('assetLoadingOverlay');
-        if (!overlay || overlay.classList.contains('hideAssetLoader')) return;
-        primeAudio();
-        overlay.classList.add('hideAssetLoader');
-        setTimeout(() => {
-          overlay.style.display = 'none';
-        }, 260);
-      }
-
-      function showAssetLoaderReady(failed = 0) {
-        const readyBtn = document.getElementById('assetLoaderReadyBtn');
-        const skipBtn = document.getElementById('assetLoaderSkipBtn');
-        updateAssetLoader(1, 1, failed, failed ? 'Ready — a few files will retry during play.' : 'All game assets are ready.');
-        if (readyBtn) readyBtn.style.display = 'inline-block';
-        if (skipBtn) skipBtn.style.display = 'none';
-      }
-
-      async function bootstrapGameWithAssetPreload() {
-        const readyBtn = document.getElementById('assetLoaderReadyBtn');
-        const skipBtn = document.getElementById('assetLoaderSkipBtn');
-        let loaderClosed = false;
-        let skipWarmupRequested = false;
-
-        const closeLoader = () => {
-          if (loaderClosed) return;
-          loaderClosed = true;
-          closeAssetLoadingOverlay();
-        };
-
-        if (readyBtn) readyBtn.addEventListener('click', closeLoader);
-        if (skipBtn) {
-          skipBtn.addEventListener('click', () => {
-            skipWarmupRequested = true;
-            skipBtn.disabled = true;
-            skipBtn.textContent = 'Finishing Core Files...';
-            const label = document.getElementById('assetLoaderStatus');
-            if (label) label.textContent = 'Skipping the full cache warmup. Preparing core game files...';
-          });
-        }
-
-        const skipTimer = setTimeout(() => {
-          if (!loaderClosed && skipBtn) skipBtn.style.display = 'inline-block';
-        }, 12000);
-
-        const urls = collectRemoteAssetUrls();
-        updateAssetLoader(0, urls.length, 0, 'Downloading images and sound...');
-        const warmup = await warmAssetManifest(
-          urls,
-          (completed, total, failed) => {
-            updateAssetLoader(completed, total, failed, 'Downloading images and sound...');
-          },
-          () => skipWarmupRequested
-        );
-
-        updateAssetLoader(0, 1, warmup.failed, warmup.skipped ? 'Preparing core game sprites...' : 'Preparing game sprites...');
-        await Promise.all([
+      Promise.all([
         loadImage('brad', ASSETS.brad),
         loadImage('bradStep', ASSETS.bradStep),
         loadImage('bradJump', ASSETS.bradJump),
-        loadImage('bradClimb1', ASSETS.bradClimb1),
-        loadImage('bradClimb2', ASSETS.bradClimb2),
-        loadImage('bradMoto1', ASSETS.bradMoto1),
-        loadImage('bradMoto2', ASSETS.bradMoto2),
-
-        loadImage('captCocktail', ASSETS.captCocktail),
-        loadImage('captCocktailStep', ASSETS.captCocktailStep),
-        loadImage('captCocktailJump', ASSETS.captCocktailJump),
-        loadImage('captCocktailClimb1', ASSETS.captCocktailClimb1),
-        loadImage('captCocktailClimb2', ASSETS.captCocktailClimb2),
-        loadImage('captCocktailMoto1', ASSETS.captCocktailMoto1),
-        loadImage('captCocktailMoto2', ASSETS.captCocktailMoto2),
-
-        loadImage('steveBruce', ASSETS.steveBruce),
-        loadImage('steveBruceStep', ASSETS.steveBruceStep),
-        loadImage('steveBruceJump', ASSETS.steveBruceJump),
-        loadImage('steveBruceClimb1', ASSETS.steveBruceClimb1),
-        loadImage('steveBruceClimb2', ASSETS.steveBruceClimb2),
-        loadImage('steveBruceMoto1', ASSETS.steveBruceMoto1),
-        loadImage('steveBruceMoto2', ASSETS.steveBruceMoto2),
-
-        loadImage('elly', ASSETS.elly),
-        loadImage('ellyStep', ASSETS.ellyStep),
-        loadImage('ellyJump', ASSETS.ellyJump),
-        loadImage('ellyClimb1', ASSETS.ellyClimb1),
-        loadImage('ellyClimb2', ASSETS.ellyClimb2),
-        loadImage('ellyMoto1', ASSETS.ellyMoto1),
-        loadImage('ellyMoto2', ASSETS.ellyMoto2),
-
-        loadImage('jordy', ASSETS.jordy),
-        loadImage('jordyStep', ASSETS.jordyStep),
-        loadImage('jordyJump', ASSETS.jordyJump),
-        loadImage('jordyClimb1', ASSETS.jordyClimb1),
-        loadImage('jordyClimb2', ASSETS.jordyClimb2),
-        loadImage('jordyMoto1', ASSETS.jordyMoto1),
-        loadImage('jordyMoto2', ASSETS.jordyMoto2),
-
-        loadImage('kevin', ASSETS.kevin),
-        loadImage('kevinStep', ASSETS.kevinStep),
-        loadImage('kevinJump', ASSETS.kevinJump),
-        loadImage('kevinClimb1', ASSETS.kevinClimb1),
-        loadImage('kevinClimb2', ASSETS.kevinClimb2),
-
+        loadImage('zombie', ASSETS.zombie),
         loadImage('restoredBerry', ASSETS.restoredBerry),
         loadImage('healthPickup', ASSETS.healthPickup),
-        loadImage('fallingZombie', ASSETS.fallingZombie),
-        loadImage('level7BurrowMound', ASSETS.level7BurrowMound),
-        loadImage('level7BurrowPeek', ASSETS.level7BurrowPeek),
-        loadImage('level7BurrowClimb', ASSETS.level7BurrowClimb),
-        loadImage('level3BossStatic', ASSETS.level3BossStatic),
-        loadImage('level3BossWalk', ASSETS.level3BossWalk),
-        loadImage('level3BossPreAttack', ASSETS.level3BossPreAttack),
-        loadImage('level3BossPostAttack', ASSETS.level3BossPostAttack),
-        loadImage('level3BossBall', ASSETS.level3BossBall),
-        loadImage('level2BossStatic', ASSETS.level2BossStatic),
-        loadImage('level2BossWalk', ASSETS.level2BossWalk),
-        loadImage('level2BossPreAttack', ASSETS.level2BossPreAttack),
-        loadImage('level2BossPostAttack', ASSETS.level2BossPostAttack),
-        loadImage('level2BossCocktail', ASSETS.level2BossCocktail),
-        loadImage('level4BossStatic', ASSETS.level4BossStatic),
-        loadImage('level4BossWalk', ASSETS.level4BossWalk),
-        loadImage('level4BossPreAttack', ASSETS.level4BossPreAttack),
-        loadImage('level4BossPostAttack', ASSETS.level4BossPostAttack),
-        loadImage('strawberryCrateObstacle', ASSETS.strawberryCrateObstacle),
-        loadImage('shoppingCartObstacle', ASSETS.shoppingCartObstacle),
-        loadImage('produceCartObstacle', ASSETS.produceCartObstacle),
-        loadImage('checkoutStandObstacle', ASSETS.checkoutStandObstacle),
-        loadImage('garbageCanObstacle', ASSETS.garbageCanObstacle),
-        loadImage('level4CrateObstacle', ASSETS.level4CrateObstacle),
-        loadImage('level4FortuneTellerObstacle', ASSETS.level4FortuneTellerObstacle),
-        loadImage('level5ObstacleSmall', ASSETS.level5ObstacleSmall),
-        loadImage('level5ObstacleTall', ASSETS.level5ObstacleTall),
-        loadImage('level6ObstacleSprite', ASSETS.level6ObstacleSprite),
-        loadImage('level10Obstacle1', ASSETS.level10Obstacle1),
-        loadImage('level10Obstacle2', ASSETS.level10Obstacle2),
-        loadImage('sprinklerSprite', ASSETS.sprinklerSprite),
-        loadImage('tikiBarBoss', ASSETS.tikiBarBoss),
-        loadImage('actualBarBoss', ASSETS.actualBarBoss),
-        loadImage('savannaShake1', ASSETS.savannaShake1),
-        loadImage('savannaShake2', ASSETS.savannaShake2),
-        loadImage('savannaPour', ASSETS.savannaPour),
-        loadImage('savannaThrow', ASSETS.savannaThrow),
-        loadImage('closedManhole', ASSETS.closedManhole),
-        loadImage('openManholeMike', ASSETS.openManholeMike),
-        loadImage('mikeGuide', ASSETS.mikeGuide),
-        loadImage('mikeGuideWalk', ASSETS.mikeGuideWalk),
-        loadImage('mikeGuideJump', ASSETS.mikeGuideJump),
-        loadImage('introSlide1', ASSETS.introSlide1),
-        loadImage('introSlide2', ASSETS.introSlide2),
-        loadImage('introSlide3', ASSETS.introSlide3),
-        loadImage('level1StorySlide', ASSETS.level1StorySlide),
-        loadImage('level5StorySlide', ASSETS.level5StorySlide),
-        loadImage('storySlide1', ASSETS.storySlide1),
-        loadImage('storySlide2', ASSETS.storySlide2),
-        loadImage('storySlide3', ASSETS.storySlide3),
-        loadImage('storySlide4', ASSETS.storySlide4),
-        loadImage('storySlide5', ASSETS.storySlide5),
-        loadImage('storySlide6', ASSETS.storySlide6),
-        loadImage('storySlide7', ASSETS.storySlide7),
-        loadImage('storySlide8', ASSETS.storySlide8),
-        loadImage('storySlide9', ASSETS.storySlide9),
-        loadImage('storySlide10', ASSETS.storySlide10),
-        loadImage('storySlide11', ASSETS.storySlide11),
-        loadImage('storySlide12', ASSETS.storySlide12),
-        loadImage('storySlide13', ASSETS.storySlide13),
-        loadImage('storySlide14', ASSETS.storySlide14),
-        loadImage('storySlide15', ASSETS.storySlide15),
-        loadImage('storySlide16', ASSETS.storySlide16),
-        loadImage('storySlide17', ASSETS.storySlide17),
-        loadImage('level10IntroSlide', ASSETS.level10IntroSlide),
-        loadImage('level5BossStudio', ASSETS.level5BossStudio),
-        loadImage('paulRumfluencerLeft', ASSETS.paulRumfluencerLeft),
-        loadImage('paulRumfluencerWalkLeft', ASSETS.paulRumfluencerWalkLeft),
-        loadImage('paulRumfluencerRight', ASSETS.paulRumfluencerRight),
-        loadImage('paulRumfluencerWalkRight', ASSETS.paulRumfluencerWalkRight),
-        loadImage('paulRumfluencerJump', ASSETS.paulRumfluencerJump),
-        loadImage('mutantPaulBossStatic', ASSETS.mutantPaulBossStatic),
-        loadImage('mutantPaulBossWalk', ASSETS.mutantPaulBossWalk),
-        loadImage('mutantPaulBossPreAttack', ASSETS.mutantPaulBossPreAttack),
-        loadImage('mutantPaulBossPostAttack', ASSETS.mutantPaulBossPostAttack),
-        loadImage('strawberryRumBottle', ASSETS.strawberryRumBottle),
-        loadImage('level7BossStatic', ASSETS.level7BossStatic),
-        loadImage('level7BossWalk', ASSETS.level7BossWalk),
-        loadImage('level7BossPreAttack', ASSETS.level7BossPreAttack),
-        loadImage('level7BossPostAttack', ASSETS.level7BossPostAttack),
-        loadImage('level7BossThrownItem', ASSETS.level7BossThrownItem),
-        loadImage('level8BossStatic', ASSETS.level8BossStatic),
-        loadImage('level8BossWalk', ASSETS.level8BossWalk),
-        loadImage('level8BossAttack', ASSETS.level8BossAttack),
-        loadImage('level8BossThrownItem', ASSETS.level8BossThrownItem),
-        loadImage('level9BossStatic', ASSETS.level9BossStatic),
-        loadImage('level9BossWalk', ASSETS.level9BossWalk),
-        loadImage('level9BossPreAttack', ASSETS.level9BossPreAttack),
-        loadImage('level9BossPostAttack', ASSETS.level9BossPostAttack),
-        loadImage('level9BossThrownItem', ASSETS.level9BossThrownItem),
-        loadImage('level10BossStatic', ASSETS.level10BossStatic),
-        loadImage('level10BossWalk', ASSETS.level10BossWalk),
-        loadImage('level10BossPreAttack1', ASSETS.level10BossPreAttack1),
-        loadImage('level10BossPostAttack1', ASSETS.level10BossPostAttack1),
-        loadImage('level10BossPuck', ASSETS.level10BossPuck),
-        loadImage('level10BossPreAttack2', ASSETS.level10BossPreAttack2),
-        loadImage('level10BossPostAttack2', ASSETS.level10BossPostAttack2),
-        loadImage('level7BunkerClosed', ASSETS.level7BunkerClosed),
-        loadImage('level7BunkerOpen', ASSETS.level7BunkerOpen),
-        loadImage('paulZombieImpact', ASSETS.paulZombieImpact)
-      ]);
-
+        loadImage('fallingZombie', ASSETS.fallingZombie)
+      ]).then(() => {
         state.kevinUnlocked = hasKevinUnlocked();
         resetGame();
         state.kevinUnlocked = hasKevinUnlocked();
@@ -10077,21 +9870,11 @@ feat. Midnight Moon Strawberry Moonshine</div>
         clearDomSprites();
         waveBanner.classList.remove('show');
         updateOrientationNotice();
+        updateDomLayerScale();
+        const warmLevelOne = () => preloadLevelAssets(1, false);
+        if ('requestIdleCallback' in window) requestIdleCallback(warmLevelOne, { timeout: 1800 });
+        else setTimeout(warmLevelOne, 250);
         requestAnimationFrame(loop);
-        clearTimeout(skipTimer);
-        showAssetLoaderReady(warmup.failed);
-      }
-
-      bootstrapGameWithAssetPreload().catch((error) => {
-        console.error('Asset preload failed:', error);
-        const skipBtn = document.getElementById('assetLoaderSkipBtn');
-        const readyBtn = document.getElementById('assetLoaderReadyBtn');
-        const label = document.getElementById('assetLoaderStatus');
-        const count = document.getElementById('assetLoaderCount');
-        if (label) label.textContent = 'Some assets could not be preloaded.';
-        if (count) count.textContent = 'The game can still retry files during play.';
-        if (readyBtn) readyBtn.style.display = 'inline-block';
-        if (skipBtn) skipBtn.style.display = 'none';
       });
     })();
   </script>
