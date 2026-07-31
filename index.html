@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   />
-  <title>JNC's Zombied Strawberries v309 iPHONE STANDALONE</title>
+  <title>JNC's Zombied Strawberries v310 iOS ZOOM LOCK</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Zombie Strawberries" />
@@ -1832,9 +1832,122 @@
     #iphoneFullscreenNotice strong { color: #ffd84d; }
     #iphoneFullscreenNotice.show { display: block; }
 
+
+    /* v310: hard iOS gesture lock and explicit fullscreen launcher */
+    html, body, #gameShell, #gameWrap, #stage, canvas, #controls,
+    #controls *, button, .btn, .padCluster, #startOverlay, #storyOverlay {
+      touch-action: none !important;
+      -ms-touch-action: none !important;
+      -webkit-user-select: none !important;
+      user-select: none !important;
+      -webkit-touch-callout: none !important;
+    }
+
+    #iosFullscreenBtn {
+      position: absolute;
+      top: max(10px, env(safe-area-inset-top));
+      right: max(10px, env(safe-area-inset-right));
+      z-index: 16;
+      border: 2px solid rgba(255,255,255,.92);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(0,0,0,.70);
+      color: #ffd84d;
+      font: 1000 clamp(10px, 1.35vw, 14px)/1 system-ui, -apple-system, sans-serif;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #000;
+      box-shadow: 0 4px 0 rgba(0,0,0,.45);
+      cursor: pointer;
+      touch-action: none !important;
+    }
+
+    #iosFullscreenBtn:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 rgba(0,0,0,.45);
+    }
+
+    #iosFullscreenHelp {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: none;
+      place-items: center;
+      padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right))
+               max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
+      background: rgba(3,2,10,.90);
+      color: #fff;
+      text-align: center;
+      touch-action: none !important;
+    }
+
+    #iosFullscreenHelp.show { display: grid; }
+
+    #iosFullscreenHelp .iosHelpPanel {
+      width: min(92vw, 560px);
+      border: 3px solid rgba(255,255,255,.92);
+      border-radius: 18px;
+      padding: 20px;
+      background: linear-gradient(180deg, rgba(27,13,64,.98), rgba(10,7,28,.98));
+      box-shadow: 0 14px 0 rgba(0,0,0,.45);
+    }
+
+    #iosFullscreenHelp h2 {
+      margin: 0 0 10px;
+      color: #ffd84d;
+      font-size: clamp(22px, 5vw, 36px);
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 #000;
+    }
+
+    #iosFullscreenHelp p {
+      margin: 8px auto;
+      color: #f2edff;
+      font-size: clamp(14px, 3.4vw, 18px);
+      line-height: 1.35;
+    }
+
+    #iosFullscreenHelp .iosHelpActions {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    #iosFullscreenHelp .iosHelpBtn {
+      border: 3px solid #fff;
+      border-radius: 999px;
+      padding: 10px 17px;
+      background: linear-gradient(180deg, #57d8ff, #2f79ff);
+      color: #fff;
+      font-weight: 1000;
+      font-size: 15px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #000;
+      box-shadow: 0 5px 0 #12307a;
+      touch-action: none !important;
+    }
+
+    #iosFullscreenHelp .iosHelpBtn.secondary {
+      background: linear-gradient(180deg, #ffd84d, #ff8a00);
+      box-shadow: 0 5px 0 #8a4300;
+    }
+
 </style>
 </head>
 <body>
+  
+  <div id="iosFullscreenHelp" role="dialog" aria-modal="true" aria-labelledby="iosFullscreenTitle">
+    <div class="iosHelpPanel">
+      <h2 id="iosFullscreenTitle">iPhone Full Screen</h2>
+      <p id="iosFullscreenHelpText">For true borderless play on iPhone, open this game directly in Safari, tap Share, choose Add to Home Screen, and launch it from the new icon.</p>
+      <div class="iosHelpActions">
+        <button id="iosOpenDirectBtn" class="iosHelpBtn" type="button">Open Direct</button>
+        <button id="iosFullscreenCloseBtn" class="iosHelpBtn secondary" type="button">Got It</button>
+      </div>
+    </div>
+  </div>
   <div id="iphoneFullscreenNotice"><strong>True iPhone fullscreen:</strong> tap Safari’s Share button, choose <strong>Add to Home Screen</strong>, then launch the game from its icon.</div>
   <div id="gameShell">
     <div id="gameWrap">
@@ -2021,6 +2134,7 @@
       <button id="chooseCharacterBtn" type="button">Start Game</button>
       <button id="continueGameBtn" type="button">Continue Game</button>
       <button id="mainMenuBtn" type="button">Main Menu</button>
+      <button id="iosFullscreenBtn" type="button">Full Screen</button>
     </div>
 
 
@@ -10010,6 +10124,122 @@ feat. Midnight Moon Strawberry Moonshine</div>
         requestAnimationFrame(loop);
       });
     })();
+
+      // v310: prevent Safari double-tap and pinch zoom without delaying game controls.
+      (() => {
+        let lastTouchEndAt = 0;
+        let lastTouchX = 0;
+        let lastTouchY = 0;
+
+        const cancelGesture = (event) => {
+          if (event && event.cancelable) event.preventDefault();
+        };
+
+        ['gesturestart', 'gesturechange', 'gestureend', 'dblclick'].forEach((type) => {
+          document.addEventListener(type, cancelGesture, { capture: true, passive: false });
+        });
+
+        document.addEventListener('touchstart', (event) => {
+          if (event.touches && event.touches.length > 1) cancelGesture(event);
+        }, { capture: true, passive: false });
+
+        document.addEventListener('touchmove', (event) => {
+          // The game never needs browser panning or pinch gestures.
+          cancelGesture(event);
+        }, { capture: true, passive: false });
+
+        document.addEventListener('touchend', (event) => {
+          const touch = event.changedTouches && event.changedTouches[0];
+          if (!touch) return;
+
+          const now = performance.now();
+          const elapsed = now - lastTouchEndAt;
+          const dx = touch.clientX - lastTouchX;
+          const dy = touch.clientY - lastTouchY;
+          const isSecondTap = elapsed > 0 && elapsed < 500 && (dx * dx + dy * dy) < 3600;
+
+          // Pointer-down already triggers the game action. Cancelling the second
+          // touch-end suppresses Safari's zoom without losing rapid FIRE presses.
+          if (isSecondTap) cancelGesture(event);
+
+          lastTouchEndAt = now;
+          lastTouchX = touch.clientX;
+          lastTouchY = touch.clientY;
+        }, { capture: true, passive: false });
+      })();
+
+      const iosFullscreenBtn = document.getElementById('iosFullscreenBtn');
+      const iosFullscreenHelp = document.getElementById('iosFullscreenHelp');
+      const iosFullscreenHelpText = document.getElementById('iosFullscreenHelpText');
+      const iosOpenDirectBtn = document.getElementById('iosOpenDirectBtn');
+      const iosFullscreenCloseBtn = document.getElementById('iosFullscreenCloseBtn');
+
+      function isEmbeddedFrame() {
+        try { return window.self !== window.top; } catch (_) { return true; }
+      }
+
+      function closeIOSFullscreenHelp() {
+        if (iosFullscreenHelp) iosFullscreenHelp.classList.remove('show');
+      }
+
+      function showIOSFullscreenHelp() {
+        if (!iosFullscreenHelp) return;
+        if (iosFullscreenHelpText) {
+          iosFullscreenHelpText.textContent = isEmbeddedFrame()
+            ? 'This game is currently inside an embedded page. Open it directly first, then in Safari tap Share, choose Add to Home Screen, and launch it from the new icon for true borderless play.'
+            : 'iPhone Safari gives native fullscreen only to video. For true borderless game play, tap Share, choose Add to Home Screen, and launch the game from the new icon.';
+        }
+        if (iosOpenDirectBtn) iosOpenDirectBtn.style.display = isEmbeddedFrame() ? 'inline-block' : 'none';
+        iosFullscreenHelp.classList.add('show');
+      }
+
+      if (iosFullscreenBtn) {
+        iosFullscreenBtn.addEventListener('pointerdown', (event) => event.preventDefault(), { passive: false });
+        iosFullscreenBtn.addEventListener('click', async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (isStandaloneMode()) {
+            iosFullscreenBtn.textContent = 'Full Screen On';
+            setTimeout(() => { iosFullscreenBtn.textContent = 'Full Screen'; }, 1400);
+            return;
+          }
+
+          if (isIPhoneSafari()) {
+            showIOSFullscreenHelp();
+            return;
+          }
+
+          armFullscreen();
+          await enterFullscreenOnLandscape();
+        });
+      }
+
+      if (iosOpenDirectBtn) {
+        iosOpenDirectBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const opened = window.open(window.location.href, '_blank');
+          if (!opened) {
+            try { window.top.location.href = window.location.href; } catch (_) {}
+          }
+        });
+      }
+
+      if (iosFullscreenCloseBtn) {
+        iosFullscreenCloseBtn.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          closeIOSFullscreenHelp();
+        });
+      }
+
+      if (iosFullscreenHelp) {
+        iosFullscreenHelp.addEventListener('pointerdown', (event) => {
+          if (event.target === iosFullscreenHelp) closeIOSFullscreenHelp();
+        });
+      }
+
   </script>
 </body>
 </html>
