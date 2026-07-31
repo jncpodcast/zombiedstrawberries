@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   />
-  <title>JNC's Zombied Strawberries v310 iOS ZOOM LOCK</title>
+  <title>JNC's Zombied Strawberries v314 iOS SCROLLABLE CHARACTER MENU</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Zombie Strawberries" />
@@ -1735,7 +1735,19 @@
       will-change: auto !important;
     }
 
-    /* Level 10 keeps its animated look but uses fewer full-screen composited frames. */
+    /* Level 8 keeps both parallax layers moving while the band stays on frame 1. */
+    .level8StageFrame {
+      display: none !important;
+      animation: none !important;
+      opacity: 0 !important;
+    }
+
+    .level8StageFrame.frame1 {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    /* Level 10 keeps the middle parallax moving while both far backgrounds stay on frame 1. */
     .level10BgFrame,
     .level10BossFrame {
       display: none !important;
@@ -1744,58 +1756,9 @@
     }
 
     .level10BgFrame.bg1,
-    .level10BgFrame.bg3,
-    .level10BgFrame.bg5 {
+    .level10BossFrame.frame1 {
       display: block !important;
-    }
-
-    .level10BgFrame.bg1 { animation: iosLevel10Bg1 2.4s steps(1, end) infinite !important; }
-    .level10BgFrame.bg3 { animation: iosLevel10Bg2 2.4s steps(1, end) infinite !important; }
-    .level10BgFrame.bg5 { animation: iosLevel10Bg3 2.4s steps(1, end) infinite !important; }
-
-    .level10BossFrame.frame1,
-    .level10BossFrame.frame3,
-    .level10BossFrame.frame5,
-    .level10BossFrame.frame7 {
-      display: block !important;
-    }
-
-    .level10BossFrame.frame1 { animation: iosLevel10Boss1 1.6s steps(1, end) infinite !important; }
-    .level10BossFrame.frame3 { animation: iosLevel10Boss2 1.6s steps(1, end) infinite !important; }
-    .level10BossFrame.frame5 { animation: iosLevel10Boss3 1.6s steps(1, end) infinite !important; }
-    .level10BossFrame.frame7 { animation: iosLevel10Boss4 1.6s steps(1, end) infinite !important; }
-
-    @keyframes iosLevel10Bg1 {
-      0%, 33.332% { opacity: 1; }
-      33.333%, 100% { opacity: 0; }
-    }
-    @keyframes iosLevel10Bg2 {
-      0%, 33.332% { opacity: 0; }
-      33.333%, 66.665% { opacity: 1; }
-      66.666%, 100% { opacity: 0; }
-    }
-    @keyframes iosLevel10Bg3 {
-      0%, 66.665% { opacity: 0; }
-      66.666%, 100% { opacity: 1; }
-    }
-
-    @keyframes iosLevel10Boss1 {
-      0%, 24.999% { opacity: 1; }
-      25%, 100% { opacity: 0; }
-    }
-    @keyframes iosLevel10Boss2 {
-      0%, 24.999% { opacity: 0; }
-      25%, 49.999% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
-    @keyframes iosLevel10Boss3 {
-      0%, 49.999% { opacity: 0; }
-      50%, 74.999% { opacity: 1; }
-      75%, 100% { opacity: 0; }
-    }
-    @keyframes iosLevel10Boss4 {
-      0%, 74.999% { opacity: 0; }
-      75%, 100% { opacity: 1; }
+      opacity: 1 !important;
     }
 
 
@@ -1833,7 +1796,7 @@
     #iphoneFullscreenNotice.show { display: block; }
 
 
-    /* v310: hard iOS gesture lock and explicit fullscreen launcher */
+    /* v314: iOS gesture lock with an isolated scroll surface for the character menu. */
     html, body, #gameShell, #gameWrap, #stage, canvas, #controls,
     #controls *, button, .btn, .padCluster, #startOverlay, #storyOverlay {
       touch-action: none !important;
@@ -1841,6 +1804,32 @@
       -webkit-user-select: none !important;
       user-select: none !important;
       -webkit-touch-callout: none !important;
+    }
+
+    #characterMenuOverlay.show {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right))
+               max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    }
+
+    #characterMenuOverlay.show .panel {
+      min-height: 0;
+      max-height: 100%;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y !important;
+    }
+
+    #characterMenuOverlay.show .panel *,
+    #characterMenuOverlay.show #characterSelect,
+    #characterMenuOverlay.show .characterCard {
+      touch-action: pan-y !important;
     }
 
     #iosFullscreenBtn {
@@ -2737,12 +2726,15 @@ feat. Midnight Moon Strawberry Moonshine</div>
         return LEVEL_ART_LAYER_IDS[Number(level)] || '';
       }
 
-      function shouldSkipReducedLevel10Frame(img, layerId) {
+      function shouldSkipStaticArtFrame(img, layerId) {
+        if (layerId === 'level8ArtLayer') {
+          return img.classList.contains('level8StageFrame') && !img.classList.contains('frame1');
+        }
         if (layerId === 'level10ArtLayer') {
-          return img.classList.contains('bg2') || img.classList.contains('bg4') || img.classList.contains('bg6');
+          return img.classList.contains('level10BgFrame') && !img.classList.contains('bg1');
         }
         if (layerId === 'level10BossArtLayer') {
-          return img.classList.contains('frame2') || img.classList.contains('frame4') || img.classList.contains('frame6');
+          return img.classList.contains('level10BossFrame') && !img.classList.contains('frame1');
         }
         return false;
       }
@@ -2751,7 +2743,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
         const layer = document.getElementById(layerId);
         if (!layer || layer.dataset.loaded === '1') return;
         layer.querySelectorAll('img[data-src]').forEach(img => {
-          if (shouldSkipReducedLevel10Frame(img, layerId)) return;
+          if (shouldSkipStaticArtFrame(img, layerId)) return;
           img.loading = 'eager';
           img.decoding = 'async';
           if (!img.getAttribute('src')) img.src = img.dataset.src;
@@ -10125,7 +10117,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       });
     })();
 
-      // v310: prevent Safari double-tap and pinch zoom without delaying game controls.
+      // v314: prevent Safari zoom while preserving one-finger character-menu scrolling.
       (() => {
         let lastTouchEndAt = 0;
         let lastTouchX = 0;
@@ -10144,7 +10136,12 @@ feat. Midnight Moon Strawberry Moonshine</div>
         }, { capture: true, passive: false });
 
         document.addEventListener('touchmove', (event) => {
-          // The game never needs browser panning or pinch gestures.
+          const target = event.target instanceof Element ? event.target : null;
+          const characterMenuPanel = target && target.closest('#characterMenuOverlay.show .panel');
+          const isSingleFingerMenuSwipe = characterMenuPanel && event.touches && event.touches.length === 1;
+          if (isSingleFingerMenuSwipe) return;
+
+          // Outside the character menu, the game never needs browser panning or pinch gestures.
           cancelGesture(event);
         }, { capture: true, passive: false });
 
