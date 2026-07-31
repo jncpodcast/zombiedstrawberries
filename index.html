@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   />
-  <title>JNC's Zombied Strawberries v314 iOS SCROLLABLE CHARACTER MENU</title>
+  <title>JNC's Zombied Strawberries v315 iOS STATIC TILED BACKGROUND LAYERS</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Zombie Strawberries" />
@@ -1732,10 +1732,13 @@
     #level8MiddleTrack,
     #level9MidgroundTrack,
     #level10MidgroundTrack {
+      min-width: 100%;
+      animation: none !important;
+      transform: translate3d(0, 0, 0) !important;
       will-change: auto !important;
     }
 
-    /* Level 8 keeps both parallax layers moving while the band stays on frame 1. */
+    /* v315: repeated middle/foreground tiles stay static; the Level 8 band stays on frame 1. */
     .level8StageFrame {
       display: none !important;
       animation: none !important;
@@ -1747,7 +1750,7 @@
       opacity: 1 !important;
     }
 
-    /* Level 10 keeps the middle parallax moving while both far backgrounds stay on frame 1. */
+    /* Level 10 keeps its repeated middle tiles static while both far backgrounds stay on frame 1. */
     .level10BgFrame,
     .level10BossFrame {
       display: none !important;
@@ -1796,7 +1799,7 @@
     #iphoneFullscreenNotice.show { display: block; }
 
 
-    /* v314: iOS gesture lock with an isolated scroll surface for the character menu. */
+    /* v315: iOS gesture lock with an isolated scroll surface for the character menu. */
     html, body, #gameShell, #gameWrap, #stage, canvas, #controls,
     #controls *, button, .btn, .padCluster, #startOverlay, #storyOverlay {
       touch-action: none !important;
@@ -10117,7 +10120,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
       });
     })();
 
-      // v314: prevent Safari zoom while preserving one-finger character-menu scrolling.
+      // v315: prevent Safari zoom while preserving one-finger character-menu scrolling.
       (() => {
         let lastTouchEndAt = 0;
         let lastTouchX = 0;
