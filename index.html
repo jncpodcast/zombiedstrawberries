@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
   />
   <title>JNC's Zombied Strawberries v307 iOS SAFARI PERFORMANCE</title>
   <style>
@@ -1793,6 +1793,19 @@
       75%, 100% { opacity: 1; }
     }
 
+
+    /* iOS fullscreen-style viewport hardening */
+    html, body, #gameShell {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      min-height: 100dvh;
+      overscroll-behavior: none;
+      -webkit-overflow-scrolling: auto;
+    }
+    body { touch-action: none; }
+
 </style>
 </head>
 <body>
@@ -1929,7 +1942,7 @@
         <div id="level5BossArtLayer" aria-hidden="true">
           <img id="level5BossStudio" data-src="https://static.wixstatic.com/media/7b5caa_a2a60f38b5864da2b68aba265cfb927f~mv2.png" loading="lazy" decoding="async" alt="" />
         </div>
-        <canvas id="game" width="960" height="540" aria-label="JNC's Zombied Strawberries game"></canvas>
+        <canvas id="game" width="864" height="486" aria-label="JNC's Zombied Strawberries game"></canvas>
         <div id="enemyLayer"></div>
         <div id="obstacleOcclusionLayer"></div>
       </div>
@@ -2464,6 +2477,10 @@ feat. Midnight Moon Strawberry Moonshine</div>
 
       const W = 960;
       const H = 540;
+      const IOS_RENDER_SCALE = 0.90;
+      // Keep gameplay coordinates at 960x540 while drawing fewer physical pixels on iOS.
+      ctx.setTransform(IOS_RENDER_SCALE, 0, 0, IOS_RENDER_SCALE, 0, 0);
+      ctx.imageSmoothingEnabled = false;
       const groundY = 438;
       const wavesPerLevel = 5;
       const baseWaveLength = 17;
@@ -3879,6 +3896,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
         if (musicMuted) {
           pauseCurrentMusic();
         } else {
+          requestWakeLock();
           updateMusicForMode();
         }
         updateLoopSfx();
@@ -4639,13 +4657,70 @@ feat. Midnight Moon Strawberry Moonshine</div>
         return document.getElementById('gameShell') || document.getElementById('shell') || shell || document.documentElement;
       }
 
-      // iOS Safari build: do not request browser fullscreen or orientation lock.
-      // Keeping the game centered in a 16:9 stage is more reliable and avoids repeated blocked calls.
-      function tryFullscreen() {}
-      function tryFullscreenOnLoadFromArcade() {}
-      function tryLockLandscape() {}
-      function armFullscreen() {}
-      function enterFullscreenOnLandscape() {}
+      let fullscreenArmed = false;
+      let wakeLockSentinel = null;
+
+      function isFullscreenActive() {
+        return !!(document.fullscreenElement || document.webkitFullscreenElement);
+      }
+
+      async function tryFullscreen() {
+        if (isFullscreenActive()) return true;
+        const target = getGameShellElement();
+        try {
+          if (target.requestFullscreen) {
+            await target.requestFullscreen({ navigationUI: 'hide' });
+            return true;
+          }
+          if (target.webkitRequestFullscreen) {
+            target.webkitRequestFullscreen();
+            return true;
+          }
+        } catch (_) {}
+
+        // iPhone Safari may reject element fullscreen. This best-effort fallback
+        // collapses browser chrome after a user gesture and keeps the game fixed.
+        try {
+          window.scrollTo(0, 1);
+          setTimeout(() => window.scrollTo(0, 1), 80);
+        } catch (_) {}
+        return false;
+      }
+
+      async function tryLockLandscape() {
+        try {
+          if (screen.orientation && screen.orientation.lock) {
+            await screen.orientation.lock('landscape');
+          }
+        } catch (_) {}
+      }
+
+      async function requestWakeLock() {
+        try {
+          if ('wakeLock' in navigator && !wakeLockSentinel) {
+            wakeLockSentinel = await navigator.wakeLock.request('screen');
+            wakeLockSentinel.addEventListener('release', () => { wakeLockSentinel = null; });
+          }
+        } catch (_) {}
+      }
+
+      function tryFullscreenOnLoadFromArcade() {
+        updateOrientationNotice();
+        if (document.visibilityState === 'visible') window.scrollTo(0, 1);
+      }
+
+      function armFullscreen() {
+        fullscreenArmed = true;
+      }
+
+      async function enterFullscreenOnLandscape() {
+        if (!fullscreenArmed) return;
+        fullscreenArmed = false;
+        await tryFullscreen();
+        await tryLockLandscape();
+        await requestWakeLock();
+        updateOrientationNotice();
+      }
 
       function isLandscapeNow() {
         return window.innerWidth >= window.innerHeight ||
@@ -9774,7 +9849,7 @@ feat. Midnight Moon Strawberry Moonshine</div>
         updateContinueButton();
       });
 
-      startBtn.addEventListener('click', () => { armFullscreen(); beginLevel1StoryThenStart(); });
+      startBtn.addEventListener('click', () => { armFullscreen(); enterFullscreenOnLandscape(); beginLevel1StoryThenStart(); });
       demoBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         startDemoMode();
