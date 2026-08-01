@@ -1,102 +1,159 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <meta
+<meta charset="UTF-8">
+<meta
     name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
+    content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Zombie Strawberries</title>
+<title>Zombie Strawberries</title>
 
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      background: #050508;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<meta name="theme-color" content="#050508">
 
-    body {
-      display: grid;
-      place-items: center;
-      text-align: center;
-    }
+<style>
+*{
+    box-sizing:border-box;
+}
 
-    .loading {
-      padding: 24px;
-    }
+html,
+body{
+    width:100%;
+    height:100%;
+    margin:0;
+    background:#050508;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+}
 
-    .fallback {
-      margin-top: 20px;
-      display: none;
-    }
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
 
-    a {
-      display: inline-block;
-      margin: 6px;
-      padding: 12px 18px;
-      color: white;
-      background: #b31325;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+main{
+    width:min(90%,500px);
+    padding:30px;
+}
+
+h1{
+    margin-top:0;
+    font-size:2rem;
+}
+
+p{
+    opacity:.85;
+    line-height:1.5;
+}
+
+#choices{
+    display:none;
+    margin-top:25px;
+}
+
+a{
+    display:block;
+    margin:12px 0;
+    padding:15px;
+    border-radius:10px;
+    text-decoration:none;
+    background:#b31325;
+    color:white;
+    font-weight:bold;
+    transition:.2s;
+}
+
+a:hover{
+    background:#d51d34;
+}
+</style>
+
 </head>
-
 <body>
-  <main class="loading">
-    <h1>Zombie Strawberries</h1>
-    <p id="status">Preparing your game…</p>
 
-    <div class="fallback" id="fallback">
-      <p>Choose your version:</p>
-      <a href="./ios/">iPhone / iPad</a>
-      <a href="./android/">Android</a>
-    </div>
-  </main>
+<main>
 
-  <script>
-    (() => {
-      const userAgent = navigator.userAgent || "";
-      const platform = navigator.platform || "";
+<h1>🍓 Zombie Strawberries</h1>
 
-      const isAndroid = /Android/i.test(userAgent);
+<p id="status">
+Preparing the best version for your device...
+</p>
 
-      // Standard iPhone, iPad and iPod detection.
-      const isStandardIOS = /iPhone|iPad|iPod/i.test(userAgent);
+<div id="choices">
 
-      // Modern iPads may identify themselves as Macintosh computers.
-      const isModernIPad =
-        platform === "MacIntel" &&
-        navigator.maxTouchPoints > 1;
+<a href="./ios/">
+Play iPhone / iPad Version
+</a>
 
-      const isIOS = isStandardIOS || isModernIPad;
+<a href="./android/">
+Play Android / Desktop Version
+</a>
 
-      let destination = "";
+</div>
 
-      if (isIOS) {
-        destination = "./ios/";
-      } else if (isAndroid) {
-        destination = "./android/";
-      }
+</main>
 
-      if (destination) {
-        window.location.replace(destination);
-        return;
-      }
+<script>
 
-      // Desktop or an unrecognized device:
-      document.getElementById("status").textContent =
-        "Select the version you would like to play.";
+const params = new URLSearchParams(window.location.search);
 
-      document.getElementById("fallback").style.display = "block";
-    })();
-  </script>
+const forcedBuild = params.get("build");
+
+function go(path){
+    window.location.replace(path);
+}
+
+if(forcedBuild==="ios"){
+    go("./ios/");
+}
+
+if(forcedBuild==="android"){
+    go("./android/");
+}
+
+const ua = navigator.userAgent;
+
+const platform = navigator.platform;
+
+const isAndroid = /Android/i.test(ua);
+
+const isIOS =
+    /iPhone|iPad|iPod/i.test(ua) ||
+    (
+        platform==="MacIntel" &&
+        navigator.maxTouchPoints>1
+    );
+
+const isSafari =
+    /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua);
+
+if(isIOS){
+    go("./ios/");
+}
+else if(isAndroid){
+    go("./android/");
+}
+else if(isSafari){
+    // macOS Safari
+    go("./ios/");
+}
+else{
+    // Chrome, Edge, Firefox, Windows, Linux, etc.
+    go("./android/");
+}
+
+// If something goes wrong...
+setTimeout(()=>{
+
+    document.getElementById("status").textContent=
+        "Couldn't determine your device. Please choose a version below.";
+
+    document.getElementById("choices").style.display="block";
+
+},1500);
+
+</script>
+
 </body>
 </html>
