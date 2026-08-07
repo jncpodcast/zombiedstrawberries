@@ -1,0 +1,1896 @@
+{
+  "html": "C:\\Users\\JNC Computer\\Documents\\Codex\\2026-07-31\\referenced-chatgpt-conversation-this-is-untrusted-3\\outputs\\zombied-strawberries-v307-android-r2-assets\\index.html",
+  "base": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/",
+  "asset_count": 209,
+  "success_count": 209,
+  "failure_count": 0,
+  "wrong_content_type_count": 0,
+  "audio_count": 36,
+  "audio_without_cors_count": 0,
+  "failures": [],
+  "wrong_content_types": [],
+  "audio_without_cors": [],
+  "results": [
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/Elly%20-%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "613687",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/brad%20-%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "627362",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/brad%20-%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "558522",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/brad%20-%20lazer%20-%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "845442",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/brad%20-%20lazer%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "929426",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/brad%20-%20lazer.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "961427",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/derek%20-%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "852951",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/derek%20-%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "819915",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/derek%20-%20lazer%20-%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "911741",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/derek%20-lazer2%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "897669",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/derek%20-lazer2.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "950649",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/elly%20-%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "656208",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/elly%20lazer%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "829348",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/elly%20lazer%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "714348",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/elly%20lazer.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "804077",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/ezgif-4dfa9517320778e1.gif",
+      "status": 200,
+      "content_type": "image/gif",
+      "content_length": "1294514",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/happy%20strawberry.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "343542",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/health.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "456598",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/jordy%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "551086",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/jordy%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "541396",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/jordy%20lazer%20-%20walk%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "716787",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/jordy%20lazer%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "929467",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/jordy%20lazer.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "767307",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/kevin%20-%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "496768",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/kevin%20-%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "485121",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/kevin%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "541924",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/kevin%20lazer.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "676596",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/kevin%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "644593",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/paul%20-%20jump.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "770829",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/paul%20-%20left.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "740981",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/paul%20-%20right.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "753392",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/paul%20-%20walk%20left.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "760043",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/paul%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "761403",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/steve%20-%20lazer%20jump%20-%20original%20web.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "859179",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/steve%20climb%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "832241",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/steve%20climb%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "812249",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/steve%20lazer%20-%20original%20web.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "852267",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/steve%20lazer%20-%20walk%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "847953",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Common%20Sprites/zombie%20sprite%20-%20falling.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1031519",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/Daryls%20Background.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "content_length": "861016",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/crate%20%282%29.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1793008",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/crate.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "6378",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/magazines%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1465210",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/middle%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "846575",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/produce%20cart.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "821863",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%201/shopping%20cart.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1264155",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_1.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2707845",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_2.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2715046",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_3.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2704141",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_4.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2713672",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_5.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2702660",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Lab%20Background%20Frame%20Loop/lab_frame_6.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2714087",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/1%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2668011",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/2%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2719900",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/3%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2719278",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/4%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2717345",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/5%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2719166",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/6%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2718832",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/Level%2010%20-%20Boss%20Background%20Frame%20Loop/7%20boss%20round%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2718768",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/computer%20obstacle.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "402285",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/floppy%20disks.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "557560",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20post-attack%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1411675",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20post-attack%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1504213",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20pre-attack%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1466110",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20pre-attack%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1442359",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1507424",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/jaybirdboss%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1477715",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/lab%20middle.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "966534",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%2010/puck.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "5254",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/cocktail%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "22095",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/e110e95f-a225-4a33-b813-99567cc9c880.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "965516",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/eefa76d2-315e-4c17-8ba6-bba237aacf36.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "868058",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/neighborhood%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1235509",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/sprinkler.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "294797",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/tourist%20boss%20-%20post%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1458035",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/tourist%20boss%20-%20pre%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1629305",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/tourist%20boss%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2065883",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%202/tourist%20boss%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1835441",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Brad%20-%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "865690",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Brad%20-%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "850038",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Derek%20-%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "929801",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Derek%20-%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "914716",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Elly%20-%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "917996",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Elly%20-%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "933645",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Jordy%20-%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "999010",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Jordy%20-%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1014188",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Steve%20-%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "954781",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/Motorcyle%20-%20Steve%20-%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "970474",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/boss%20sprite%20-%20attack%20-%20level%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1210386",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/boss%20sprite%20-%20ball%20-%20level%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "41191",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/boss%20sprite%20-%20pre%20attack%20-%20level%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1418405",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/boss%20sprite%20-%20static%20-%20level%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1292727",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/boss%20sprite%20-%20walk%20-%20level%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1181484",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%203/level%203%20-%20parallax%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "906819",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/actual%20bar.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "430842",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/beach.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "677694",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/boardwalk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "614623",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/faurot%20-%20manhole%20closed.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "239895",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/faurot%20-%20manhole%20open.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "577666",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/fortune%20teller.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2367316",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/level%204%20background%20-.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1668468",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/savanna%20-%20pour.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "745803",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/savanna%20-%20shake%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "641316",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/savanna%20-%20shake%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "667308",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/savanna%20-%20throw.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "787321",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/tiki%20bar.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2497488",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/tiki%20boss%20sprite%20-%20attack%20-%20level%204.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1298502",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/tiki%20boss%20sprite%20-%20pre%20attack%20-%20level%204.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1503090",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/tiki%20boss%20sprite%20-%20static%20-%20level%204.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1374854",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%204/tiki%20boss%20sprite%20-%20walk%20-%20level%204.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1265722",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/Faurot%20-%20Static%20-%20flashlight.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "830746",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/Faurot%20-%20walk%20-%20flashlight.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "736150",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/Faurot%20-jump%20-%20flashlight.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "708552",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/level%205%20-%20background.jpg",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "content_length": "833331",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/level%205%20-%20boss%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1849924",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/level%205%20-%20parallax%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1803164",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/pipe%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "526995",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%205/pipe%203.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "512996",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/barrel.webp",
+      "status": 200,
+      "content_type": "image/webp",
+      "content_length": "94278",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/bottle.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "21038",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/level%206%20-%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2379064",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/level%206%20-%20parallax%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1221483",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/zombie%20bite%20paul.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1162328",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/zombie%20paul%20-%20post%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1853176",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/zombie%20paul%20-%20pre%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1955907",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/zombie%20paul%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1881401",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%206/zombie%20paul%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1729295",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/archway.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1466117",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/bunker%20closed.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "172941",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/bunker%20open.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "291197",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/oak%20hammock%20farms%20background..png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1907521",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/oak%20hammock%20middle%20area.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "683789",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/scarecrow%20boss%20-%20post-attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2001781",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/scarecrow%20boss%20-%20pre-attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2092604",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/scarecrow%20boss%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2043523",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/scarecrow%20boss%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1694073",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/scarecrow%20garden%20tool.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "89938",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/zombie%20hole%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "105227",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/zombie%20hole%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "213401",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%207/zombie%20mound.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "311564",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/crowd.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1243527",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/jam.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "61656",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/rocker%20boss%20-%20attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1681596",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/rocker%20boss%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1782165",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/rocker%20boss%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1501246",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/stage%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1780465",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%208/stage%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1782081",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/everglades%20background.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2324241",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/everglades%20middle.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1047925",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/jamball.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "29360",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/swamp%20boss%20-%20post-attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1755521",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/swamp%20boss%20-%20pre-attack.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1940422",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/swamp%20boss%20-%20static.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2172223",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/Level%209/swamp%20boss%20-%20walk.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2018588",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/images/title%20screen.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2435294",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Boss%20Music%20-%20Unrequited.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "1310494",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%201%20-%20Back%20To%20Blue.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "1452634",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%2010%20-%20Final%20Level.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "3813125",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%202%20-%20I%20Don%27t%20Wanna%20Dance.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "1461435",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%203%20-%20Time%20Stood%20Still.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "4472379",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%204%20-%20Stealing%20The%20Covers.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "4180878",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%205%20-%20Glass%20House.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "3769881",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%206%20-%20Stupid%20Dreams.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "4596374",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%207%20-%20Will%20It%20Fade.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "3658453",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%208%20-%20With%20No%20Way%20Out.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "4302328",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Level%209%20-%20Time%20To%20Go.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "4155505",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/music/Story%20Slides%20-%20Music.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "3929694",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/One%20Hour%20Zombie%20Atmosphere%20-%20Adan%20Bonilla%20Morales%20%28youtube%29_01.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "2107109",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/health.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "10286",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/jump.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "9189",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/laser%20shot.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "8290",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/recharge.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "9371",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/sounds/walk.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "18514",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/End%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "542968",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/End%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2865282",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%201%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "325525",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%201%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2056401",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%202%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "226887",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%202%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2640688",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%203%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "376516",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%203%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2568260",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%204%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "274116",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%204%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2598165",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%204%20-%20Slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "266593",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Level%204%20-%20Slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2384319",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Pre%20Game%20-%20Slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "253636",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Pre%20Game%20-%20Slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "1887572",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Pre%20Game%20-%20Slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "386965",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/Pre%20Game%20-%20Slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2225157",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%2010%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "271608",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%2010%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2286474",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%2010%20-%20slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "398250",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%2010%20-%20slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2455916",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%205%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "333048",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%205%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2505326",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%205%20-%20slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "321346",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%205%20-%20slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2324170",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%206%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "340572",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%206%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2228659",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%206%20-%20slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "292088",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%206%20-%20slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2741236",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%207%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "275370",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%207%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2469178",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%208%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "325525",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%208%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2613955",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%209%20-%20slide%201.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "297104",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%209%20-%20slide%201.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2656598",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%209%20-%20slide%202.mp3",
+      "status": 200,
+      "content_type": "audio/mpeg",
+      "content_length": "205153",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    },
+    {
+      "url": "https://pub-e71fca55ed9c40b29b0378015d6aa2f0.r2.dev/zombiedstrawberries/assets/story%20slides/level%209%20-%20slide%202.png",
+      "status": 200,
+      "content_type": "image/png",
+      "content_length": "2513824",
+      "accept_ranges": "bytes",
+      "access_control_allow_origin": "*",
+      "method": "HEAD"
+    }
+  ]
+}
