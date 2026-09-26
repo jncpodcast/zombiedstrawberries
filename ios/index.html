@@ -1085,6 +1085,13 @@
       display: block;
     }
 
+    /* v1 release: keep developer level-jump controls out of the player UI. */
+    #devMenuBtn,
+    #devLevelMenu,
+    #devLevelMenu.show {
+      display: none !important;
+    }
+
     .devMenuTitle {
       color: #ffd84d;
       font-weight: 1000;
