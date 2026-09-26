@@ -8,7 +8,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
-  <title>JNC's Zombied Strawberries v308 ANDROID R2 SPRITE CACHE FIX</title>
+  <title>JNC's Zombied Strawberries v309 ANDROID PAUSE MENU FIX</title>
   <style>
     :root {
       --yellow: #ffd84d;
@@ -1004,6 +1004,98 @@
 
     #pauseOverlay .quitBtn:active {
       box-shadow: 0 2px 0 #6f071d !important;
+    }
+
+    /* Keep the pause actions visible on short landscape Android screens. */
+    #pauseOverlay {
+      position: fixed;
+      height: 100vh;
+      height: 100dvh;
+      grid-template-rows: minmax(0, 1fr);
+      padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right))
+               max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    }
+
+    #pauseOverlay .panel {
+      max-height: 100%;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    #pauseOverlay .panel h1,
+    #pauseOverlay .panel p,
+    #pauseOverlay .pauseMenuButtons {
+      flex-shrink: 0;
+    }
+
+    #pauseCharacterSelect {
+      width: 100%;
+      min-height: 0;
+      flex: 1 1 auto;
+      align-content: flex-start;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+      padding: 3px 2px 10px;
+    }
+
+    #pauseCharacterSelect * {
+      touch-action: pan-y;
+    }
+
+    @media (orientation: landscape) and (max-height: 480px) {
+      #pauseOverlay .panel {
+        padding: 10px;
+      }
+
+      #pauseOverlay h1 {
+        font-size: clamp(24px, 6vh, 32px);
+        margin-bottom: 4px;
+      }
+
+      #pauseOverlay p {
+        font-size: 12px;
+        margin: 3px auto;
+      }
+
+      #pauseCharacterSelect {
+        gap: 6px;
+        margin: 6px auto 3px;
+      }
+
+      #pauseCharacterSelect .characterCard {
+        width: clamp(70px, 10vw, 88px);
+        padding: 4px;
+        border-width: 2px;
+      }
+
+      #pauseCharacterSelect .characterCard img {
+        width: clamp(44px, 6vw, 56px);
+        height: clamp(52px, 14vh, 64px);
+        margin-bottom: 2px;
+      }
+
+      #pauseCharacterSelect .characterCard .charName {
+        font-size: 9px;
+      }
+
+      #pauseOverlay .pauseMenuButtons {
+        gap: 6px !important;
+        margin-top: 6px !important;
+      }
+
+      #pauseOverlay .pauseActionBtn {
+        width: clamp(104px, 14vw, 140px) !important;
+        min-width: clamp(104px, 14vw, 140px) !important;
+        padding: 6px 10px !important;
+        border-width: 3px !important;
+        font-size: clamp(12px, 2vw, 16px) !important;
+      }
     }
 
 
